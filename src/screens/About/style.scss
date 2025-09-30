@@ -1,0 +1,628 @@
+.bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 1000px;
+  max-height: 1000px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  // z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.about-us-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //   padding: 60px 80px;
+  gap: 40px;
+  background-color: #fff;
+  .left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding-left: 80px;
+
+    span:first-child {
+      font-family: "Tiro Kannada";
+      color: #000;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 73px;
+      letter-spacing: 0%;
+      text-align: left;
+
+      .blue-text {
+        color: #5aafff;
+      }
+    }
+
+    .text-below-about {
+      font-family: "Poppins";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      max-width: 500px;
+    }
+
+    .schedule-btn {
+      width: fit-content;
+      padding: 14px 30px;
+      border-radius: 50px;
+      background: #02879A;
+      color: #fff;
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+      z-index: 100;
+
+      &:hover {
+        background: #004170;
+      }
+    }
+  }
+
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 790px;
+      height: 533px;
+      border-radius: 19px;
+      object-fit: cover;
+
+      &.main-image {
+        margin-top: 124px;
+      }
+    }
+
+    .about-thumbnails {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      img {
+        width: 182px;
+        height: 125px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .about-us-hero {
+    flex-direction: column;
+    padding: 150px 20px 40px;
+    gap: 32px;
+
+    .left-side {
+      padding-left: 0;
+      width: 100%;
+      align-items: flex-start;
+
+      span:first-child {
+        margin: auto;
+        display: flex;
+        font-size: 48px;
+        line-height: 56px;
+      }
+
+      .text-below-about {
+        display: flex;
+        margin: auto;
+        font-size: 15px;
+        max-width: 90%;
+        text-align: center;
+      }
+
+      .schedule-btn {
+        padding: 12px 26px;
+        font-size: 14px;
+        display: flex;
+        margin: auto;
+      }
+    }
+
+    .right-side {
+      width: 100%;
+      align-items: center;
+
+      img.main-image {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        margin-top: 124px;
+      }
+
+      .about-thumbnails {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+
+        img.thumbnail {
+          width: calc(50% - 12px);
+          height: auto;
+          aspect-ratio: 4 / 3;
+          max-width: 180px;
+        }
+      }
+    }
+  }
+}
+.main-about-us-content-div {
+  padding: 50px 0;
+  border-radius: 71px;
+  position: relative;
+  bottom: 40px;
+  z-index: 1000;
+  background: rgb(255, 255, 255);
+}
+.financial-wisdom {
+  display: flex;
+  gap: 40px;
+  padding: 40px 60px 80px 60px;
+  align-items: center;
+
+  .img-div {
+    flex: 1;
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+  }
+
+  .content-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .about-us-title {
+      color: #034833;
+
+      font-family: "Plus Jakarta Sans";
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .header-fin-wis {
+      color: #222;
+      line-height: 1.3;
+
+      font-family: "Tiro Kannada";
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: 0%;
+    }
+
+    .bullet-points {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+
+      .bullet {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        .bullet-icon {
+          width: 24px;
+          height: 24px;
+          margin-top: 4px;
+        }
+
+        .bullet-text {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .bullet-title {
+            color: #000;
+            font-family: "Plus Jakarta Sans";
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 30px;
+            letter-spacing: 0%;
+            margin-bottom: 10px;
+          }
+
+          .bullet-subtext {
+            color: #727272;
+            width: 475px;
+
+            font-family: "Plus Jakarta Sans";
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            letter-spacing: 0%;
+          }
+        }
+      }
+    }
+
+    .contact-us-btn {
+      width: 160px;
+      height: 60px;
+      top: 1577px;
+      left: 728px;
+      gap: 10px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+background: linear-gradient(90deg, #005F77 0%, #018699 100%);      font-family: "Plus Jakarta Sans";
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 30px;
+      letter-spacing: 0%;
+      color: #f9f9f9;
+    }
+  }
+}
+
+.container-facts {
+  width: 100%;
+  height: 390px;
+  padding: 131px 120px;
+background: linear-gradient(90deg, #005F77 0%, #018699 100%);  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .fact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+
+    .fact-number {
+      font-family: "Poppins";
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 88px;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+
+    .fact-text {
+      margin-top: 10px;
+      font-size: 24px;
+      font-weight: 400;
+      max-width: 180px;
+      white-space: nowrap;
+
+      font-family: "Poppins";
+      line-height: 32px;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+  }
+}
+
+.team-section {
+  padding: 40px;
+  text-align: center;
+
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  &__description {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: #666;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    justify-content: center;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.ethics-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .ethics-img,
+  .ethics-text-detail {
+    flex: 1 1 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+  }
+
+  .ethics-img {
+    img {
+      max-width: 100%;
+      max-height: 480px;
+      width: 100%;
+      height: auto;
+      border-radius: 0px;
+      object-fit: cover;
+    }
+  }
+
+  .ethics-text-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .ethics-title {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      text-align: left;
+      width: 550px;
+      padding-bottom: 30px;
+      color: #14293e;
+      font-family: "Fjord";
+      line-height: 40px;
+      letter-spacing: 0%;
+    }
+
+    .ethics-description {
+      color: #6a6a6a;
+      width: 550px;
+      padding-left: 20px;
+      border-left: 2px solid #46b5b6;
+      text-align: left;
+      max-width: 80%;
+
+      font-family: "Poppins";
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 40px;
+      letter-spacing: 0%;
+    }
+  }
+
+  &:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+}
+.ethics-details.with-margin {
+  padding-bottom: 190px;
+}
+
+.rounded {
+  // border-bottom-left-radius: 190px;
+  overflow: hidden;
+}
+
+.ethics-details:nth-of-type(2) {
+  margin-bottom: 76px;
+}
+.profile-wrapper {
+  background: linear-gradient(90deg, #005F77 0%, #018699 100%); // Blue background
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // min-height: 100vh;
+  margin-bottom: 180px;
+
+  .title-our-team {
+    font-family: "Tiro Kannada";
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    color: #fff;
+    padding-bottom: 60px;
+  }
+}
+
+.card-container {
+  background-color: #fff;
+  display: flex;
+  border-radius: 21px;
+  overflow: hidden;
+  max-width: 1080px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.left img {
+  width: 279px;
+  height: 406px;
+  border-radius: 21px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+.right {
+  flex: 1;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right h2 {
+  margin: 0;
+
+  font-family: "Tiro Kannada";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.right h4 {
+  margin: 8px 0;
+  color: #727272;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  display: flex;
+  align-items: center;
+  .line {
+    margin-right: 20px;
+    height: 1px;
+    width: 70px;
+    border: 1px solid #000000;
+  }
+}
+
+.right p {
+  margin-bottom: 16px;
+  color: #727272;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.details .row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+
+  .detail-team-title {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    color: #000;
+    padding-right: 25px;
+  }
+
+  .detail-team-title span {
+    padding-left: 15px;
+  }
+}
+
+.details span {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  color: #727272;
+}
+
+.dot-navigation {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #fff;
+}
+// Responsive
+@media (max-width: 768px) {
+  .ethics-details {
+    flex-direction: column;
+
+    .ethics-img,
+    .ethics-text-detail {
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+
+    .ethics-text-detail {
+      align-items: flex-start;
+
+      .ethics-title,
+      .ethics-description {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .ethics-description {
+        padding-left: 0;
+        border-left: none;
+        border-top: 4px solid #2e82b5;
+        padding-top: 20px;
+      }
+    }
+  }
+}
+.loader-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+.no-results {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  color: #555;
+
+  h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+  }
+}

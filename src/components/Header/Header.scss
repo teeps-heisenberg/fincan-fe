@@ -1,0 +1,132 @@
+.header {
+  position: absolute;
+  top: 00px;
+  // left: 20px;
+  // right: 20px;
+  width: 100%;
+  z-index: 100;
+  border-radius: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #0f161e;
+  // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    max-width: 171px;
+    height: auto;
+    // max-height: 68px;
+    // font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .nav-item {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      font-family: "Poppins";
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0px;
+      text-align: center;
+      vertical-align: middle;
+
+      &:hover {
+        color: #005c9a;
+      }
+    }
+
+    //     .action-btn {
+    //       width: 95px;
+    // height: 34px;
+    // // top: 38px;
+    // // left: 1327px;
+    // border-width: 1px;
+    // border-radius: 999px;
+    // // padding-top: 5px;
+    // // padding-right: 23px;
+    // // padding-bottom: 5px;
+    // // padding-left: 23px;
+
+    //       // padding: 8px 16px;
+    //     background-color: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 8.85%, #5AAFFF 100%);
+    //       // color: white;
+    //       // border: none;
+    //       // border-radius: 4px;
+    //       cursor: pointer;
+    //       font-weight: bold;
+    //       transition: background-color 0.3s ease;
+    //       white-space: nowrap;
+    //       &:hover {
+    //         background-color: #0056b3;
+    //       }
+    //     }
+
+    .action-btn {
+      position: relative;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #e4e4e4, #c0c0c0, #f5f5f5);
+      color: #0f96eb;
+      border: none;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 0;
+      overflow: hidden;
+      // box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6),
+      //             inset 0 -1px 2px rgba(219, 219, 219, 0.1),
+      //             0 2px 5px rgba(0, 0, 0, 0.1);
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -42px; // expands outside the button
+        background: conic-gradient(
+          #2e82b5,
+          #5aafff,
+          #2e82b5,
+          #000,
+          #2e82b5,
+          #2e82b5
+        );
+        border-radius: inherit;
+        z-index: -1;
+        animation: rotateBorder 2s linear infinite;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 2px; // matches the border thickness
+        background: #0f161e;
+        border-radius: inherit;
+        color: #ffffff;
+        z-index: 0;
+      }
+      .btn-label {
+        position: relative;
+        z-index: 1;
+        color: #ffffff;
+      }
+    }
+
+    @keyframes rotateBorder {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

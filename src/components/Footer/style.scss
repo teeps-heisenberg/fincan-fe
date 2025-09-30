@@ -1,0 +1,380 @@
+.consultancy-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; // ensures responsiveness
+  color: #222;
+  font-family: sans-serif;
+  background: linear-gradient(90deg, #005F77 0%, #018699 100%);;
+  padding: 150px 20px 20px 90px;
+  position: relative;
+  margin-top: -100px;
+//   width: ;
+}
+
+/* ─── Left side ─────────────────────────── */
+.consultancy-left {
+  flex: 1;
+  min-width: 280px;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-family: "Tiro Kannada";
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    color: #f8f9fa;
+
+    .blue-text{
+      color: #fff;
+
+    }
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    line-height: 30px;
+    font-family: 'Plus Jakarta Sans';
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0%;
+
+  }
+
+  .point {
+    display: flex;
+    align-items: center !important;
+    // justify-content: center;
+    gap: 12px;
+    // margin-bottom: 38px !important;
+    color: #fff;
+
+.point-icon {
+  width: 25px !important;
+  height: 25px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block; 
+  margin-top: 2px; 
+
+
+  &:nth-last-of-type(3) {
+    width: 19px;
+  }
+}
+
+    .point-text {
+      display: flex;
+      flex-direction: column;
+
+      .primary {
+        // margin-bottom: 10px;
+           font-family: 'Plus Jakarta Sans';
+font-weight: 400;
+font-size: 16px;
+line-height: 30px;
+letter-spacing: 0%;
+
+      }
+
+      .secondary {
+        color: #f7f7f7;
+           font-family: 'Plus Jakarta Sans';
+font-weight: 600;
+font-size: 18px;
+line-height: 28px;
+letter-spacing: 0%;
+
+      }
+    }
+  }
+}
+
+/* ─── Right side ────────────────────────── */
+.consultancy-right {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+
+  .input-row {
+    display: flex;
+    gap: 30px;
+    // flex-wrap: wrap; // keeps layout intact on smaller widths
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 6px;
+      margin-left: 12px;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 30px;
+      letter-spacing: 0%;
+
+    }
+
+    input {
+      width: 260px;
+      height: 60px;
+      padding: 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 15px;
+    }
+  }
+
+  .address-group {
+    input {
+      width: 550px;
+    }
+
+    // override only for address
+  }
+
+  .submit-btn {
+    width: 550px;
+    height: 60px;
+    border: none;
+    border-radius: 999px;
+    background: #000 !important;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0%;
+
+  }
+}
+
+
+@media (max-width:1200px) {
+
+    .consultancy-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; // Optional, helps on smaller screens
+  }
+
+  .consultancy-left,
+  .consultancy-right {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .consultancy-left {
+  flex: 1;
+  max-width: auto;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-family: "Tiro Kannada";
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    color: #f8f9fa;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  .point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 38px !important;
+    color: #fff;
+
+    .point-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .point-text {
+      display: flex;
+      flex-direction: column;
+
+      .primary {
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .secondary {
+        font-size: 14px;
+        color: #f7f7f7;
+      }
+    }
+  }
+}
+.consultancy-right {
+  flex: 1;
+  min-width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+
+  .input-row {
+    display: flex;
+    gap: 30px;
+    // flex-wrap: wrap; // keeps layout intact on smaller widths
+  .input-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      margin-left: 12px;
+      color: #fff;
+    }
+
+    input {
+        width: 100%;
+    max-width: 100%;
+      height: 60px;
+      padding: 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 15px;
+    }
+  }
+
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      margin-left: 12px;
+      color: #fff;
+    }
+
+    input {
+        width: 100%;
+    max-width: 100%;
+      height: 60px;
+      padding: 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 15px;
+    }
+  }
+
+  .address-group {
+    input {
+      width: 100%;
+    max-width: 100%;
+    }
+
+    // override only for address
+  }
+
+  .submit-btn {
+     width: 100%;
+    max-width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 999px;
+    background: #5aafff;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+}
+}
+
+
+/* ─── Responsive tweaks ─────────────────── */
+@media (max-width: 900px) {
+  .consultancy-wrapper {
+    flex-direction: column;
+  }
+
+  .consultancy-right {
+    .input-row {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+    }
+
+    .address-group input {
+      width: 100%;
+    }
+
+    .submit-btn {
+      align-self: stretch;
+    }
+  }
+}
+
+/* -------------- BASIC RESPONSIVE TOUCH ----------------------- */
+@media (max-width: 990px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+
+    .contact-info {
+      text-align: center;
+    }
+
+    .contact-form {
+      position: static;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  .below-blue-section {
+    flex-direction: column;
+    padding: 40px 20px;
+
+    .left-image,
+    .right-content {
+      width: 100%;
+    }
+  }
+}
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}

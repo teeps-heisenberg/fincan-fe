@@ -1,0 +1,698 @@
+.blog-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 150px !important;
+
+  .bg-test-back{
+    top:0px !important;
+  }
+  .blog-title {
+    font-family: "Tiro Kannada";
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 73px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  .blog-subtitle {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    line-height: 10px;
+  }
+
+  .schedule-btn {
+    width: 218px;
+    height: 53px;
+    top: 410px;
+    left: 628px;
+    gap: 10px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-top: 21px;
+    // padding-right: 30px;
+    // padding-bottom: 21px;
+    // padding-left: 30px;
+    background: #02879A !important;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
+
+.blog-img-main-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px; // Optional padding for small screens
+  z-index: 100;
+  position: relative;
+  img {
+    width: 100%;
+    max-width: 1233px;
+    height: auto;
+    border-radius: 13px;
+    object-fit: cover;
+  }
+}
+.blog-detail-div {
+  position: relative;
+  z-index: 100;
+  padding: 80px 90px;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  background-color: #fff;
+  border-radius: 90px;
+
+  .blog-2-img {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+  }
+  .blog-title-second {
+    font-family: "Tiro Kannada";
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-top: 50px;
+  }
+
+  .blog-content {
+    margin: 10px 0;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    color: #727272;
+  }
+  img {
+    width: 1241px;
+    height: 416px;
+    border-radius: 20px;
+  }
+  .explore-beyond {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 40px;
+
+    .explore-beyond-img {
+      width: 500px;
+      height: 342px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .explore-beyond-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      max-width: 600px;
+
+      .explore-heading {
+        font-family: "Tiro Kannada";
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 0%;
+        text-transform: capitalize;
+      }
+      .explore-beyond-text{
+        font-family: 'Plus Jakarta Sans';
+font-weight: 400;
+font-size: 16px;
+line-height: 30px;
+letter-spacing: 0%;
+color: #727272;
+
+      }
+      .explore-beyond-text-1 {
+        font-family: "Plus Jakarta Sans";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        background: #727272;
+      }
+
+      .bold-heading {
+        font-family: "Plus Jakarta Sans";
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0%;
+      }
+      .explore-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #2e2e2e;
+      }
+
+      .explore-description {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .explore-bullets {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0 0;
+        font-family: "Plus Jakarta Sans";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0%;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 12px;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+.text-card-box {
+  margin-top: 40px;
+  background: linear-gradient(90deg, #005F77 0%, #018699 100%);
+  padding: 50px;
+  width: 850px;
+  height: 346px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: center;
+  // box-shadow: 0px 0px 60px 0px #0000000d;
+  // border: 1px solid #005d9a;
+
+    .commas-div{
+width: 51px;
+height: 51px;
+// top: 2462px;
+// left: 345px;
+// angle: 0 deg;
+opacity: 1;
+border: 1px solid rgb(255, 255, 255);
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 999px;
+border-width: 1px;
+
+.commas{
+  height: 30px;
+  width: 30px;
+}
+    }
+.quote-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #005E72 ;
+  border: 1px solid #f5f6f7;
+  color: #feffff;
+  font-size: 38px;   
+  font-weight: bold;
+  font-family: serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+  padding-top: 10px;     
+}
+
+  .text-card-detail {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #ffffff;
+  }
+
+  .authorTeam {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    color: #fff;
+  }
+
+  .dummy {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    color: #ffffff;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 900px) {
+    width: 90%;
+    height: auto;
+    padding: 30px;
+  }
+}
+
+
+  .get-consultancy {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    .get-consultancy-title {
+      // display: flex;
+      font-family: "Tiro Kannada";
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 36px;
+      letter-spacing: 0%;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .get-consultancy-subText {
+      font-family: "Plus Jakarta Sans";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 30px;
+      letter-spacing: 0%;
+      color: #727272;
+    }
+  }
+
+  .tabs-div {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1212px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #fff;
+    border-top: 1px solid #e3dbd8;
+    border-bottom: 1px solid #e3dbd8;
+    box-sizing: border-box;
+
+    .tabs-left {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+
+      .tab {
+        border-radius: 20px;
+        font-weight: 500;
+        background-color: #5aafff29;
+        cursor: pointer;
+        transition: all 0.2s;
+        width: 150px;
+        height: 40px;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          // background-color: #eaeaea;
+        }
+      }
+    }
+
+    .tabs-right {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color: white;
+        box-sizing: content-box;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    // Responsive styles
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .tabs-left,
+      .tabs-right {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .tabs-right {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tab {
+        width: 100%;
+      }
+
+      .tabs-left {
+        gap: 10px;
+      }
+
+      .tabs-right {
+        justify-content: center;
+      }
+    }
+  }
+
+  .person-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px;
+
+    .meet-team-heading {
+      font-family: "Tiro Kannada";
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+    .person-info-div {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 40px;
+
+      .explore-beyond-img {
+        width: 440px;
+        height: 425px;
+        border-radius: 20px;
+
+        object-fit: cover;
+      }
+
+      .explore-beyond-detail {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        max-width: 600px;
+        // padding: 20px 0;
+        .nameTeamMember {
+          font-family: "Tiro Kannada";
+          font-weight: 400;
+          font-size: 50px;
+          line-height: 60px;
+          letter-spacing: 0%;
+          vertical-align: middle;
+        }
+
+        .person-occup {
+          display: flex;
+          align-items: center;
+          font-family: "Plus Jakarta Sans";
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 30px;
+          letter-spacing: 0%;
+          color: #727272;
+          // padding-left: 10%;
+
+          .line{
+            margin-right: 20px;
+            height: 1px;
+            width: 70px;
+            border: 1px solid #000000;
+          }
+        }
+
+        .explore-beyond-text-1 {
+          font-family: "Plus Jakarta Sans";
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 30px;
+          letter-spacing: 0%;
+          vertical-align: middle;
+          color: #727272;
+        }
+
+        .bold-heading {
+          font-family: "Plus Jakarta Sans";
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0%;
+        }
+
+        .simple-heading {
+          font-family: "Plus Jakarta Sans";
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 30px;
+          letter-spacing: 0%;
+          color: #495057;
+        }
+        .contact-me-person {
+          width: 304px;
+          height: 75px;
+          border-radius: 52px;
+          background: linear-gradient(90deg, #005F77 0%, #018699 100%);
+          font-family: "Plus Jakarta Sans";
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: 0%;
+          text-transform: capitalize;
+          color: #f5f5f5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .explore-title {
+          font-size: 28px;
+          font-weight: 700;
+          color: #2e2e2e;
+        }
+
+        .explore-description {
+          font-size: 16px;
+          color: #555;
+          line-height: 1.5;
+        }
+
+        .explore-bullets {
+          list-style: none;
+          padding: 0;
+          margin: 20px 0 0 0;
+
+          li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+
+            img {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.loader-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+.no-results {
+  text-align: center;
+  margin: 2rem 0;
+  h3 {
+    color: #d00;
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width:900px) {
+//   .blog-main{
+//       padding-top: 100px !important;
+
+//       .blog-title{
+// font-size: 24px !important;
+
+//       }
+//       .blog-subtitle{
+//         font-size: 11px !important;
+
+//       }
+
+//       .schedule-btn{
+//         width: 119px !important;
+// height: 32px !important;
+// border-radius: 50px;
+// // padding-top: 21px;
+// // padding-right: 30px;
+// // padding-bottom: 21px;
+// // padding-left: 30px;
+// display: flex;
+// align-items: center;
+// justify-content: center;
+// gap: 10px;
+// font-size: 6px !important;
+//       }
+//   }
+
+//  .blog-img-main-1 {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 0 16px; // Optional padding for small screens
+//   z-index: 100;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     max-width: 1233px;
+//     height: auto;
+//     border-radius: 13px;
+//     object-fit: cover;
+//   }
+// }
+.blog-detail-div{
+    padding: 80px 20px;
+ .blog-2-img {
+    width: 100%;
+    height: 315px;
+    object-fit: cover;
+  }
+
+  .explore-beyond{
+flex-direction: column;
+align-items: start;
+        .explore-beyond-img {
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  }
+}
+}
+
+@media (max-width: 900px) {
+  .person-info-wrapper {
+    padding: 16px;
+
+    .meet-team-heading {
+      font-size: 36px;
+      line-height: 46px;
+    }
+
+    .person-info-div {
+      flex-direction: column;
+      align-items: center !important;
+      gap: 24px !important;
+      margin-top: 24px !important;
+
+      .explore-beyond-img {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: auto !important;
+        border-radius: 16px !important;
+      }
+
+      .explore-beyond-detail {
+        max-width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+
+        .nameTeamMember {
+          font-size: 36px !important;
+          line-height: 44px !important;
+        }
+
+        .person-occup {
+          justify-content: center !important;
+          font-size: 14px !important;
+
+          .line {
+            width: 50px !important;
+            margin-right: 12px !important;
+          }
+        }
+
+        .explore-beyond-text-1,
+        .simple-heading,
+        .bold-heading {
+          font-size: 14px !important;
+          line-height: 24px !important;
+        }
+
+        .contact-me-person {
+          width: 240px !important;
+          height: 60px !important;
+          font-size: 20px !important;
+          line-height: 30px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:615px) {
+  .blog-detail-div{
+ .blog-2-img {
+    width: 100%;
+  }
+
+  .explore-beyond{
+        .explore-beyond-img {
+          width: 100%;
+    }
+  }
+}
+}

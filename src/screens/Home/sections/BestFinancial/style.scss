@@ -1,0 +1,194 @@
+.best-financial-main {
+  background: linear-gradient(90deg, #005f77 0%, #018699 100%);
+  padding: 50px;
+
+  .best-upper-part-div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .service-heading {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+    position: relative;
+    left: 30px;
+  }
+
+  .arrow-controls {
+    height: 60px;
+    // width: 60px;
+    position: relative;
+    // top: 40px;
+    // right: 40px;
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+
+    .arrow-btn {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      // border: none;
+      border-radius: 50%;
+      // padding: 10px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      // &:hover {
+      //   background-color: #2e82b5;
+      // }
+
+      svg {
+        width: 40px;
+        height: 25px;
+      }
+    }
+    .arrow-btn-next {
+      border: none;
+      background-color: #a9a8a3;
+    }
+  }
+}
+
+.best-financial-heading {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  position: relative;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Tiro Kannada";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 55px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+/* container for the grid */
+.pic-div-best {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+
+  .pic-1 {
+    position: relative;
+    width: 190px;
+    height: 422px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid transparent;
+    transition: transform 0.25s ease, border-color 0.25s, width 0.3s ease;
+    flex-shrink: 0;
+
+    .circle-service-card {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &.active {
+      width: 410px;
+    }
+
+    .detail-box-best-fin {
+      position: absolute;
+      top: 166px;
+      max-width: 100%;
+      height: 239px;
+      padding: 24px 30px;
+      border-radius: 20px;
+
+      // Semi-transparent dark background with blur effect
+      background-color: rgba(0, 0, 0, 0.4); // Dark transparent background
+      backdrop-filter: blur(6px); // Optional: adds frosted glass effect
+      -webkit-backdrop-filter: blur(6px); // Safari support
+
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      span:first-child {
+        font-family: "Plus Jakarta Sans";
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 30px;
+        text-align: left;
+      }
+
+      span:nth-child(2) {
+        text-align: left;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+      }
+
+      .btn-explore-more {
+        width: fit-content;
+        height: 42px;
+        border-radius: 999px;
+        padding: 0 30px;
+        border: 1px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .pic-div-best {
+    gap: 20px;
+
+    .pic-1 {
+      width: 45%; // 2 per row
+      &.active {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pic-div-best {
+    flex-direction: column;
+    align-items: center;
+
+    .pic-1 {
+      width: 90%;
+      height: auto;
+
+      &.active {
+        width: 100%;
+      }
+
+      .detail-box-best-fin {
+        position: static;
+        margin-top: 20px;
+        height: auto;
+      }
+    }
+  }
+
+  .arrow-controls {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .best-financial-heading {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
