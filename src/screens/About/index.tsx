@@ -345,6 +345,9 @@ function About() {
                   name={member.name}
                   role={member.role}
                   bio={member.bio}
+                  description={
+                    "There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available."
+                  }
                   image={member.image?.url}
                   facebookUrl={member.facebookUrl}
                   instagramUrl={member.instagramUrl}

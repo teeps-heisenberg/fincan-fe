@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.scss";
 import Header from "../../components/Header";
 import blog1 from "../../assets/blog/blog-1.jpg";
-import blog2 from "../../assets/blog/blog-2.jpg";
 import blog3 from "../../assets/blog/blog-3.jpg";
 import blog4 from "../../assets/blog/blog-4.jpg";
 
@@ -17,7 +16,6 @@ import { toast } from "react-toastify";
 import Footer from "../../components/Footer";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCloudinaryUrl } from "../../utils/getCloudinaryUrl";
-import commas from "../../assets/commas.png";
 import bg from "../../assets/common/circle-bg.png";
 interface TeamMember {
   _id: string;
@@ -82,16 +80,32 @@ function ServiceDetail() {
 
     const flushList = () => {
       if (currentList.length) {
-        elements.push(<ul key={`ul-${elements.length}`}>{currentList}</ul>);
+        elements.push(
+          <ul key={`ul-${elements.length}`} className="service-bullet-list">
+            {currentList}
+          </ul>
+        );
         currentList = [];
       }
     };
 
     lines.forEach((line, i) => {
-      if (/^(?:●|•|[-*])\s*/.test(line)) {
-        // bullet line → push to current list
-        const cleaned = line.replace(/^(?:●|•|[-*])\s*/, "").trim();
-        currentList.push(<li key={`li-${i}`}>{cleaned}</li>);
+      if (/^[-*]\s*/.test(line)) {
+        // dash/hyphen bullet line → push to current list with bold styling
+        const cleaned = line.replace(/^[-*]\s*/, "").trim();
+        currentList.push(
+          <li key={`li-${i}`} className="service-bullet-item">
+            <strong>{cleaned}</strong>
+          </li>
+        );
+      } else if (/^(?:●|•)\s*/.test(line)) {
+        // other bullet types → push to current list without bold
+        const cleaned = line.replace(/^(?:●|•)\s*/, "").trim();
+        currentList.push(
+          <li key={`li-${i}`} className="service-bullet-item">
+            {cleaned}
+          </li>
+        );
       } else {
         // normal paragraph → flush list before it
         flushList();

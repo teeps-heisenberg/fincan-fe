@@ -3,13 +3,31 @@
   height: 430px;
   background-color: #fff;
   border-radius: 0px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    width: 780px;
+    height: 380px;
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  // Default card layout
+  &__default {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+  }
 
   &__image {
-    width: 310px;
+    width: 100%;
     height: 230px;
     object-fit: cover;
   }
@@ -27,6 +45,7 @@
     font-weight: 600;
     margin: 0;
     text-align: left;
+    color: #333;
   }
 
   &__designation {
@@ -62,5 +81,77 @@
         color: #0077ff;
       }
     }
+  }
+
+  // Expanded hover layout
+  &__expanded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  &__expanded-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+  }
+
+  &__expanded-left {
+    flex: 0 0 280px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__expanded-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+  }
+
+  &__expanded-right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 50px;
+    background-color: #018699;
+  }
+
+  &__expanded-description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+    margin: 0;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  // Show expanded layout on hover
+  &:hover &__default {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover &__expanded {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0s linear 0s;
   }
 }
