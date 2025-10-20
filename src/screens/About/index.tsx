@@ -40,6 +40,7 @@ interface TeamMember {
   email: string;
   phone: string;
   bio?: string;
+  description?: string;
   experience: number;
   image?: { url?: string };
   facebookUrl?: string;
@@ -346,6 +347,7 @@ function About() {
                   role={member.role}
                   bio={member.bio}
                   description={
+                    member.description ||
                     "There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available."
                   }
                   image={member.image?.url}
