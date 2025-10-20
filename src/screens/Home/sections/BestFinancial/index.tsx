@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.scss";
 import img1 from "../../../../assets/best-financial-1.jpg";
 import img2 from "../../../../assets/best-financial-2.jpg";
 import img3 from "../../../../assets/best-financial-3.jpg";
 import img4 from "../../../../assets/best-financial-4.jpg";
 import img5 from "../../../../assets/best-financial-5.jpg";
-import circle from "../../../../assets/common/service-cirlce-card.png";
-import { FaArrowLeft, FaArrowRight, FaIcons } from "react-icons/fa";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const pictures = [
@@ -89,13 +87,11 @@ export default function BestFinancial() {
               // onMouseLeave={() => setActiveId(null)}
             >
               {/* <img loading="lazy" src={circle} alt="" className="circle-service-card" /> */}
-              {isOpen && (
-                <div className="detail-box-best-fin">
-                  <span>{title}</span>
-                  <span>{description}</span>
-                  <div className="btn-explore-more">Explore More</div>
-                </div>
-              )}
+              <div className="detail-box-best-fin">
+                <span>{title}</span>
+                <span>{description}</span>
+                <div className="btn-explore-more">Explore More</div>
+              </div>
             </button>
           );
         })}

@@ -73,21 +73,22 @@
 /* container for the grid */
 .pic-div-best {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   margin-top: 40px;
 
   .pic-1 {
     position: relative;
-    width: 190px;
+    flex: 1;
+    min-width: 0;
     height: 422px;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
     border: 4px solid transparent;
-    transition: transform 0.25s ease, border-color 0.25s, width 0.3s ease;
-    flex-shrink: 0;
+    transition: transform 0.25s ease, border-color 0.25s;
+    overflow: hidden;
 
     .circle-service-card {
       position: absolute;
@@ -97,27 +98,29 @@
       height: 40px;
     }
 
-    &.active {
-      width: 410px;
-    }
-
     .detail-box-best-fin {
       position: absolute;
-      top: 166px;
-      max-width: 100%;
-      height: 239px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: auto;
+      min-height: 250px;
       padding: 24px 30px;
       border-radius: 20px;
 
       // Semi-transparent dark background with blur effect
-      background-color: rgba(0, 0, 0, 0.4); // Dark transparent background
-      backdrop-filter: blur(6px); // Optional: adds frosted glass effect
-      -webkit-backdrop-filter: blur(6px); // Safari support
+      background-color: rgba(0, 0, 0, 0.6); // Dark transparent background
+      backdrop-filter: blur(8px); // Optional: adds frosted glass effect
+      -webkit-backdrop-filter: blur(8px); // Safari support
 
       color: #fff;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
 
       span:first-child {
         font-family: "Plus Jakarta Sans";
@@ -143,6 +146,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+
+    &.active {
+      .detail-box-best-fin {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
@@ -150,34 +166,44 @@
 
 @media (max-width: 1200px) {
   .pic-div-best {
-    gap: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 
     .pic-1 {
-      width: 45%; // 2 per row
-      &.active {
-        width: 90%;
-      }
+      flex: 1 1 calc(50% - 15px); // 2 per row
+      min-width: 280px;
     }
   }
 }
 
 @media (max-width: 768px) {
+  .best-financial-main {
+    padding: 30px 20px;
+  }
+
   .pic-div-best {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 20px;
 
     .pic-1 {
-      width: 90%;
-      height: auto;
-
-      &.active {
-        width: 100%;
-      }
+      width: 100%;
+      height: 350px;
+      min-width: 0;
 
       .detail-box-best-fin {
-        position: static;
-        margin-top: 20px;
-        height: auto;
+        min-height: 200px;
+        padding: 20px;
+
+        span:first-child {
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        span:nth-child(2) {
+          font-size: 14px;
+          line-height: 22px;
+        }
       }
     }
   }
