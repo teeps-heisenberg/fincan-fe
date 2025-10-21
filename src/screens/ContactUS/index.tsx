@@ -106,15 +106,15 @@ export default function ContactUs() {
           </h4>
           <div className="info-list">
             <span className="address">
-              10700 Academy Rd NE, Albuquerque, <br />
-              New York, UNITED STATES <br />
-              (505) 299-5051
+              {/* 10700 Academy Rd NE, Albuquerque, <br />
+              New York, UNITED STATES <br /> */}
+              (505) 299-5051 (519) 734-6500
             </span>
-            <span className="address-2">
+            {/* <span className="address-2">
               1481 Front, Windsor <br />
               Ontario, CANADA <br />
               (519) 734-6500
-            </span>
+            </span> */}
           </div>
         </div>
 

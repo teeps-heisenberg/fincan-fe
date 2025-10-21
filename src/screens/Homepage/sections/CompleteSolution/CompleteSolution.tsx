@@ -32,19 +32,19 @@ export const CompleteSolution = (): JSX.Element => {
           </div>
           <p className="complete-solution">
             <span className="text-wrapper-31">
-              Empowering Financial Future
+              Turning Visions into
               <br />
             </span>
             {/* <span className="text-wrapper-32">Your</span>
             <span className="text-wrapper-31">&nbsp;</span> */}
-            <span className="text-wrapper-32">
-              with Expert Advisory Services
-            </span>
+            <span className="text-wrapper-32">Bankable Realities</span>
           </p>
           <p className="text-hero">
-            Tailored financial strategies that safeguard your personal goals
-            while accelerating your business growth. With decades of combined
-            expertise, we bring clarity to complex financial challenges.
+            We craft tailored financial strategies that align your business's
+            growth trajectory with your personal financial security. Leveraging
+            over two decades of global expertise, we cut through complexity to
+            provide the clarity and structure needed to turn ambitious
+            challenges into decisive, bankable solutions.
           </p>
           <div className="schedule" onClick={() => navigate(`/contactus`)}>
             Book Your Free Consultation

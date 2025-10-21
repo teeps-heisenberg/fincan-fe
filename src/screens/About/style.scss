@@ -263,6 +263,24 @@
       }
     }
 
+    .founder-description {
+      margin-top: 20px;
+
+      p {
+        color: #444;
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: left;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     .contact-us-btn {
       width: 160px;
       height: 60px;
@@ -604,6 +622,13 @@
         border-top: 4px solid #2e82b5;
         padding-top: 20px;
       }
+    }
+  }
+
+  .founder-description {
+    p {
+      font-size: 15px;
+      line-height: 1.5;
     }
   }
 }

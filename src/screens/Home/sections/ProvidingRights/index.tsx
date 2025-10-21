@@ -22,12 +22,11 @@ function ProvidingRights() {
             </div>
           </div>
           <div className="detail">
-            At Fincan Inc., we are a team of seasoned financial professionals
-            committed to helping individuals, families, and businesses take
-            control of their financial future. With a strong foundation in
-            personal finance, business lending, retirement planning, and
-            investment strategy, we specialize in providing customized financial
-            solutions that create long-term value
+            At FinCan Solutions Inc., we help entrepreneurs, developers, and
+            investors transform business ideas into fundable, lender-ready
+            projects. From startups and expansions to real estate and
+            construction financing, our goal is to make your vision bankable,
+            sustainable, and lender-approved.
           </div>
           <div className="explore-more-team" onClick={() => navigate(`/about`)}>
             Explore More

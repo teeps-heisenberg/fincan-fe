@@ -262,35 +262,37 @@ function ServiceDetail() {
                       className="explore-beyond-img"
                     />
                     <div className="explore-beyond-detail">
-                      <span className="nameTeamMember">
+                      <h2 className="specialist-name">
                         {service.specialist.name}
-                      </span>
-                      <div className="person-occup">
-                        <div className="line"></div>
-                        {service.specialist.role}
+                      </h2>
+                      <div className="specialist-title">
+                        <div className="title-line"></div>
+                        <span>{service.specialist.role}</span>
                       </div>
-                      <span className="explore-beyond-text-1">
+                      <p className="specialist-bio">
                         {service.specialist.bio || "No bio available."}
-                      </span>
-                      <div>
-                        <span className="bold-heading">Experience: </span>
-                        <span className="simple-heading">
-                          {service.specialist.experience} years
-                        </span>
+                      </p>
+                      <div className="specialist-details">
+                        <div className="detail-item">
+                          <span className="detail-label">Experience:</span>
+                          <span className="detail-value">
+                            {service.specialist.experience} years
+                          </span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">Email:</span>
+                          <span className="detail-value">
+                            {service.specialist.email}
+                          </span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">Phone:</span>
+                          <span className="detail-value">
+                            {service.specialist.phone}
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <span className="bold-heading">Email: </span>
-                        <span className="simple-heading">
-                          {service.specialist.email}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="bold-heading">Phone: </span>
-                        <span className="simple-heading">
-                          {service.specialist.phone}
-                        </span>
-                      </div>
-                      <div className="contact-me-person">Contact me</div>
+                      <button className="contact-me-person">Contact Me</button>
                     </div>
                   </div>
                 ) : (

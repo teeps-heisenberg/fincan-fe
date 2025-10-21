@@ -193,9 +193,14 @@ function About() {
             About <span className="">us</span>
           </span>
           <span className="text-below-about">
-            Guiding Your Financial Journey with Tailored Insurance, Retirement
-            Planning, and Wealth-Building Strategies for Lifelong Security and
-            Peace of Mind
+            At FinCan Solutions Inc., we help entrepreneurs, developers, and
+            investors transform business ideas into fundable, lender-ready
+            projects. From startups and expansions to real estate and
+            construction financing, our goal is to make your vision bankable,
+            sustainable, and lender-approved. With global banking experience
+            spanning the Middle East, Europe, and North America, we bring an
+            international perspective to local financing — combining financial
+            acumen, industry insight, and strong institutional relationships.
           </span>
           <div className="schedule-btn" onClick={() => navigate(`/contactus`)}>
             Schedule a consultation
@@ -237,8 +242,8 @@ function About() {
               onError={(e) => ((e.target as HTMLImageElement).src = finWis)}
             />
           </div>
-          <div className="content-div">
-            <span className="about-us-title">About us</span>
+          {/* <div className="content-div">
+            <span className="about-us-title">Meet Our Founder</span>
             <span className="header-fin-wis">
               Financial Wisdom from the Legacy
             </span>
@@ -273,6 +278,29 @@ function About() {
                   </span>
                 </div>
               </div>
+            </div>
+            <div className="contact-us-btn">Contact Us</div>
+          </div> */}
+          <div className="content-div">
+            <span className="about-us-title">Meet Our Founder</span>
+            <div className="founder-description">
+              <p>
+                Founded by Adeel Moghal, a seasoned finance professional with
+                over two decades of global banking experience, FinCan Solutions
+                bridges the gap between entrepreneurs and lenders.
+              </p>
+              <p>
+                Before establishing FinCan, Adeel worked with leading financial
+                institutions in Dubai, Saudi Arabia, Europe, and Canada,
+                managing complex commercial and corporate portfolios across
+                industries including construction, real estate development,
+                logistics, manufacturing, and international trade.
+              </p>
+              <p>
+                Today, FinCan applies that global expertise to help Canadian
+                businesses structure deals that meet both local lending
+                standards and international best practices.
+              </p>
             </div>
             <div className="contact-us-btn">Contact Us</div>
           </div>
@@ -360,7 +388,7 @@ function About() {
           )}
         </div>
 
-        <div className="ethics-details">
+        {/* <div className="ethics-details">
           <div className="ethics-text-detail">
             <span className="ethics-title">Ethics and integrity</span>
             <div className="ethics-description">
@@ -399,7 +427,7 @@ function About() {
               delivering solutions that help build a sustainable future for all.
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="profile-wrapper">
           <div className="title-our-team">Reviews</div>
