@@ -9,7 +9,7 @@ import AnimatedCounter from "../../../../components/AnimatedCounter";
 function ProvidingRights() {
   const navigate = useNavigate();
   return (
-    <>
+    <div className="providing-rights-container">
       <div className="mainProviding">
         <div className="left-side">
           <div className="section-title">About us</div>
@@ -76,7 +76,7 @@ function ProvidingRights() {
         <img loading="lazy" src={img2} alt="Slider 2" />
         <img loading="lazy" src={img3} alt="Slider 3" />
       </div>
-    </>
+    </div>
   );
 }
 

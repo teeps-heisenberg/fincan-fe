@@ -4,6 +4,14 @@
   flex-wrap: wrap;
   justify-content: center; // Optional, to center items on smaller screens
 
+  // Mobile responsive
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+    flex-direction: column-reverse; // Images after text
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .our-team-imgs {
     width: 680px;
     height: 400px;
@@ -13,6 +21,19 @@
     align-items: flex-end;
     flex: 0 0 auto; // prevents it from growing or shrinking
 
+    // Mobile responsive
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; // Center images
+      gap: 15px;
+      margin-top: 30px; // Space between text and images
+    }
+
     .img-wrapper {
       position: absolute;
       width: 243px;
@@ -20,6 +41,18 @@
       border-radius: 21px;
       overflow: hidden;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+      // Mobile responsive
+      @media (max-width: 768px) {
+        position: static;
+        width: 100px;
+        height: 120px;
+        border-radius: 12px;
+        margin: 0;
+        transform: none !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+      }
     }
 
     .pos-1 {
@@ -58,12 +91,27 @@
     gap: 20px;
     padding: 50px 20px 0 20px;
 
+    // Mobile responsive
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 20px 0;
+      text-align: left; // Left align like screenshot
+      align-items: flex-start; // Align to left
+      position: relative; // For button positioning
+    }
+
     .our-team-text {
       font-size: 20px;
       color: #02879a;
       font-family: "DM Sans";
       font-weight: 400;
       line-height: 100%;
+
+      // Mobile responsive
+      @media (max-width: 768px) {
+        font-size: 16px;
+        text-align: left; // Left align
+      }
     }
 
     .meet-the-face {
@@ -72,6 +120,15 @@
       font-size: 48px;
       line-height: 55px;
       letter-spacing: 0%;
+
+      // Mobile responsive
+      @media (max-width: 768px) {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: left; // Left align
+        display: inline; // Make inline so text flows
+        max-width: 60%; // Leave space for button
+      }
     }
 
     .blue-text {
@@ -84,6 +141,14 @@
       font-size: 20px;
       line-height: 26px;
       letter-spacing: 0%;
+
+      // Mobile responsive
+      @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: left; // Left align
+        max-width: 100%;
+      }
     }
 
     .explore-more-team {
@@ -103,32 +168,21 @@
       letter-spacing: 0%;
       cursor: pointer;
 
+      // Mobile responsive
+      @media (max-width: 768px) {
+        width: auto;
+        padding: 12px 24px;
+        font-size: 12px;
+        margin: 0;
+        position: absolute; // Position opposite to heading
+        top: 40px; // Align with "Meet the faces" line
+        right: 0;
+      }
+
       // &:hover {
       //   color: #1a5e82;
       // }
     }
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-
-    .our-team-imgs,
-    .our-team-detail-div {
-      width: 100%;
-      max-width: 100%;
-      flex: 1 1 100%;
-      text-align: center;
-    }
-
-    .our-team-imgs {
-      height: auto;
-
-      .img-wrapper {
-        position: static;
-        margin: 10px;
-        transform: none !important;
-      }
-    }
-  }
 }

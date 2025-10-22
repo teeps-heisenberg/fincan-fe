@@ -21,21 +21,23 @@ function Home() {
     const imageArray = [m1, m2, m3, m4,m5];
 
   return (
-    <>
-    <Header/>
-    <CompleteSolution/>
-    <Marquee images={imageArray} speed={12} height="64px" />
-    <div className="white-div-container">
-      <ProvidingRights/>
-      <Testimonial/>
-      <BestFinancial/>
-      <OurTeam/>
-      <Bars/>
-      <SuccessStories/>
+    <div className="home-container">
+      <Header/>
+      <div className="main-content">
+        <CompleteSolution/>
+        <Marquee images={imageArray} speed={12} height="64px" />
+        <div className="white-div-container">
+          <ProvidingRights/>
+          <Testimonial/>
+          <BestFinancial/>
+          <OurTeam/>
+          <Bars/>
+          <SuccessStories/>
+        </div>
+        <Footer/>
+        {/* <Group /> */}
+      </div>
     </div>
-    <Footer/>
-              {/* <Group /> */}
-    </>
 )
 }
 

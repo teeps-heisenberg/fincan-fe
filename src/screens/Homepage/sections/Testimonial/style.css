@@ -10,6 +10,14 @@
   justify-content: space-between;
   align-items: center;
 
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px !important;
+    text-align: center;
+    gap: 20px;
+  }
+
   .testimonial-header-div {
     font-family: "DM Sans";
     font-weight: 400;
@@ -31,6 +39,13 @@
     letter-spacing: 0%;
     text-transform: capitalize;
     color: #000;
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      font-size: 32px;
+      line-height: 40px;
+      margin: 10px 0;
+    }
   }
   .blue-text {
     color: #02879a !important;
@@ -38,6 +53,14 @@
   .right-side-box {
     display: flex;
     gap: 20px;
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
     p {
       max-width: 430px;
       height: 50px;
@@ -48,6 +71,15 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 26px;
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        max-width: 100%;
+        height: auto;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 10px;
+      }
       letter-spacing: 0%;
     }
     .primary-cta {

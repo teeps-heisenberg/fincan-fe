@@ -97,25 +97,20 @@ export default function ContactUs() {
         </div>
       )}
       <section className="contact-section">
-        {/* ------- LEFT INFO --------- */}
+        {/* Mobile: Title at top */}
+        <div className="mobile-title">
+          <h2>Contact us For the Consultancy</h2>
+          <p>Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum has been the industry's standard dummy text ever</p>
+        </div>
+
+        {/* ------- LEFT INFO (Desktop) --------- */}
         <div className="contact-info">
           <h2 className="info-title">Get In Touch with FinCan Solutions</h2>
           <h4 className="info-subtitle">
             Ready to take control of your financial future?
-            <br /> We’re here to help.
+            <br /> We're here to help.
           </h4>
-          <div className="info-list">
-            <span className="address">
-              {/* 10700 Academy Rd NE, Albuquerque, <br />
-              New York, UNITED STATES <br /> */}
-              (505) 299-5051 (519) 734-6500
-            </span>
-            {/* <span className="address-2">
-              1481 Front, Windsor <br />
-              Ontario, CANADA <br />
-              (519) 734-6500
-            </span> */}
-          </div>
+          {/* Address removed from desktop view */}
         </div>
 
         {/* ------- RIGHT FORM -------- */}
@@ -175,6 +170,15 @@ export default function ContactUs() {
             Submit
           </button>
         </form>
+
+        {/* Mobile: Address at bottom */}
+        <div className="mobile-address">
+          <p className="address-text">
+            10700 ACADEMY RD NE, ALBUQUERQUE,<br />
+            NEW YORK , UNITED STATES<br />
+            (505) 299-5051
+          </p>
+        </div>
       </section>
 
       {/* ----- MAP + SOCIAL ----- */}

@@ -141,8 +141,8 @@ function CaseStudy() {
           <img loading="lazy" src={bg} alt="bg" />
         </div>
         <span className="blog-title">
-          Complete Solution for <br />
-          Your Finances
+          <span className="title-part1">Financial</span>{" "}
+          <span className="title-part2">Consultancy</span>
         </span>
         <span className="blog-subtitle">
           Guiding Your Financial Journey with Tailored Insurance, Retirement

@@ -3,19 +3,51 @@
   gap: 40px;
   padding: 40px;
   align-items: center;
-  padding-top: 20px;
   padding-top: 150px;
+  width: 100%;
+  margin: 0;
+
+  // Mobile responsive layout
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 20px;
+    gap: 20px;
+    text-align: center;
+    max-width: 100%;
+  }
   .left-content {
     flex: 1;
+
+    // Mobile responsive
+    @media (max-width: 768px) {
+      flex: none;
+      width: 100%;
+      order: 1;
+    }
+
     .left-box-content-div {
       position: relative;
       bottom: 80px;
+
+      @media (max-width: 768px) {
+        bottom: 0;
+        position: static;
+      }
       .overlap-9 {
         left: 100px;
         height: 29px;
         position: relative;
         width: 93px;
         margin: 0;
+
+        // Mobile responsive
+        @media (max-width: 768px) {
+          left: 0;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+        }
         .arrow {
           height: 15px;
           left: 50px;
@@ -68,6 +100,16 @@
         line-height: 64px;
         width: 688px;
 
+        // Mobile responsive
+        @media (max-width: 768px) {
+          left: 0;
+          width: 100%;
+          font-size: 32px;
+          line-height: 40px;
+          text-align: center;
+          padding-top: 10px;
+        }
+
         .text-wrapper-31 {
           color: #000000;
         }
@@ -87,6 +129,17 @@
         line-height: 24px;
         letter-spacing: 0%;
         margin-bottom: 40px;
+
+        // Mobile responsive
+        @media (max-width: 768px) {
+          left: 0 !important;
+          width: 100%;
+          height: auto;
+          font-size: 14px;
+          line-height: 22px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
       }
 
       .schedule {
@@ -108,12 +161,22 @@
         line-height: 100%;
         letter-spacing: 0%;
         white-space: nowrap;
-        display: flex;
+
         align-items: center;
         justify-content: center;
         cursor: pointer;
+
         &:hover {
           background: #000000;
+        }
+
+        // Mobile responsive
+        @media (max-width: 768px) {
+          width: fit-content;
+          margin: 0 auto;
+          margin-top: 20px;
+          padding: 16px 24px;
+          font-size: 14px;
         }
       }
 
@@ -123,6 +186,13 @@
         position: relative;
         top: 28px;
         width: 97px;
+
+        // Mobile responsive
+        @media (max-width: 768px) {
+          left: 0;
+          margin: 0 auto;
+          top: 20px;
+        }
 
         .ellipse-7,
         .ellipse-8,
@@ -157,6 +227,13 @@
         top: -05px;
         width: 113px;
 
+        // Mobile responsive
+        @media (max-width: 768px) {
+          left: 0;
+          margin: 0 auto;
+          top: 10px;
+        }
+
         .text-wrapper-50,
         .text-wrapper-51 {
           color: #000000;
@@ -181,19 +258,34 @@
   }
 
   .right-slider {
-    flex: 1;
+    flex: 1.2;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    // Mobile responsive
+    @media (max-width: 768px) {
+      order: 2;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
     .slider {
       position: relative;
       // width: 100%;
       width: 560px;
+
       height: 560px;
       // height: 300px;
+
+      // Mobile responsive
+      @media (max-width: 768px) {
+        width: 100%;
+        max-width: 400px;
+        height: 200px;
+      }
 
       .slide {
         display: none;
@@ -238,12 +330,33 @@
       top: 0;
       width: 562px;
 
+      // Mobile responsive
+      @media (max-width: 768px) {
+        left: 0;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        order: 1;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+      }
+
       .rectangle-14 {
         align-self: stretch;
         height: 560px;
         object-fit: cover;
         position: relative;
         width: 100%;
+
+        // Mobile responsive
+        @media (max-width: 768px) {
+          height: 300px;
+          border-radius: 10px;
+          width: 100%;
+          object-fit: cover;
+          display: block;
+        }
       }
 
       .curcle-icon-4 {

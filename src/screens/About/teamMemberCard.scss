@@ -155,3 +155,121 @@
     transition: opacity 0.2s ease, visibility 0s linear 0s;
   }
 }
+
+@media (max-width: 768px) {
+  .team-card {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 0px;
+    overflow: visible;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      width: 100%;
+      height: auto;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    // Default card layout
+    &__default {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      transition: opacity 0.3s ease;
+      overflow: hidden;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1.5;
+      object-fit: cover;
+    }
+
+    &__info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      gap: 8px;
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    &__designation {
+      font-size: 14px;
+      color: #888;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__description {
+      font-size: 13px;
+      color: #555;
+      margin: 8px 0 0 0;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+
+    &__socials {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 8px;
+
+      a {
+        color: #555;
+        font-size: 16px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #0077ff;
+        }
+      }
+    }
+
+    // Disable expanded hover layout on mobile
+    &__expanded {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+      display: none;
+      align-items: center;
+    }
+
+    &:hover &__default {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:hover &__expanded {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0s linear 0s;
+    }
+  }
+}

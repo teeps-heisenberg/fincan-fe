@@ -34,7 +34,7 @@ export const Homepage = (): JSX.Element => {
           </button>
 
           <button className="button-5">
-            <div className="text-wrapper-35">Explore More</div>
+            <div className="text-wrapper-35">Explore More</div>now
           </button>
 
           <p className="providing-the-right">

@@ -12,6 +12,7 @@
   gap: 20px;
   padding: 100px 0 0 0;
   position: relative;
+  
   .blog-title {
     font-family: "Tiro Kannada";
     font-weight: 400;
@@ -20,6 +21,7 @@
     letter-spacing: 0%;
     text-align: center;
   }
+  
   .blog-subtitle {
     font-family: "Poppins";
     font-weight: 400;
@@ -46,6 +48,39 @@
     letter-spacing: 0%;
     color: #fff;
     white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #004a7a;
+    }
+  }
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    padding: 60px 20px 0;
+    gap: 16px;
+
+    .blog-title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    .blog-subtitle {
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0 20px;
+    }
+
+    .schedule-btn {
+      width: 180px;
+      height: 45px;
+      font-size: 13px;
+      padding: 12px 24px;
+      position: static;
+      margin-top: 10px;
+    }
   }
 }
 
@@ -70,6 +105,7 @@
     color: #fff;
     font-size: 18px;
     font-weight: 500;
+    cursor: pointer;
   }
 
   .back-arrow {
@@ -81,6 +117,7 @@
       transform: translateX(-4px);
     }
   }
+  
   .blue-box-text {
     font-family: "Tiro Kannada";
     font-weight: 400;
@@ -88,6 +125,29 @@
     line-height: 73px;
     letter-spacing: 0%;
     text-align: center;
+  }
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    height: 120px;
+    top: 40px;
+    padding-left: 16px;
+
+    .blue-box-content {
+      left: 0;
+      bottom: 0;
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .back-arrow {
+      font-size: 18px;
+    }
+
+    .blue-box-text {
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 }
 
@@ -99,6 +159,7 @@
   background-color: #f9f9f9;
   position: relative;
   z-index: 2;
+  
   .left {
     width: 167px;
     font-family: "Poppins";
@@ -138,6 +199,49 @@
       }
     }
   }
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin: 20px;
+
+    .left {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+
+      .date {
+        font-size: 16px;
+        white-space: normal;
+      }
+    }
+
+    .right {
+      width: 100%;
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 15px 0;
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
 }
 
 .text-card-box {
@@ -150,6 +254,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  
   .quote-circle {
     width: 50px;
     height: 50px;
@@ -157,11 +262,11 @@
     background-color: #ffffff;
     border: 1px solid #005d9a;
     color: #005d9a;
-    font-size: 36px; // slightly smaller for balance
+    font-size: 36px;
     font-weight: bold;
     font-family: serif;
     text-align: center;
-    line-height: 50px; // ensures vertical alignment
+    line-height: 50px;
   }
 
   .author {
@@ -170,7 +275,7 @@
     font-size: 22px;
     line-height: 30px;
     letter-spacing: 0%;
-    padding: 0  !important;
+    padding: 0 !important;
   }
 
   .dummy {
@@ -179,6 +284,33 @@
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0%;
+  }
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    gap: 15px;
+
+    .quote-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    .author {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .dummy {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }
 
@@ -213,7 +345,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  background-color: #f9f9f9; // optional background for visibility
+  background-color: #f9f9f9;
   border-top: 1px solid #e3dbd8;
   border-bottom: 1px solid #e3dbd8;
 
@@ -222,8 +354,6 @@
     gap: 20px;
 
     .tab {
-      //   padding: 10px 20px;
-      //   border: 1px solid #ccc;
       border-radius: 8px;
       font-weight: 500;
       background-color: white;
@@ -231,8 +361,6 @@
       transition: all 0.2s;
       width: 85px;
       height: 40px;
-      // top: 3124px;
-      // left: 102px;
       border-radius: 20px;
       padding-top: 5px;
       padding-right: 10px;
@@ -259,16 +387,48 @@
       height: 20px;
       cursor: pointer;
       transition: transform 0.2s;
-
-      // Wrap the image in a circle border
       padding: 10px;
       border: 1px solid black;
       border-radius: 50%;
-      background-color: white; // optional, looks clean
+      background-color: white;
       box-sizing: content-box;
 
       &:hover {
         transform: scale(1.1);
+      }
+    }
+  }
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    margin-top: 30px;
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+
+    .tabs-left {
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .tab {
+        width: 70px;
+        height: 35px;
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+    }
+
+    .tabs-right {
+      gap: 10px;
+      justify-content: center;
+
+      img {
+        width: 16px;
+        height: 16px;
+        padding: 8px;
       }
     }
   }

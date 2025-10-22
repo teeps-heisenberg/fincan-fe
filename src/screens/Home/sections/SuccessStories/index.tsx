@@ -39,7 +39,7 @@ export default function SuccessStories() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
-    }, 2000);
+    }, 5000); // Changed from 2000ms to 5000ms (5 seconds)
     return () => clearInterval(timer);
   }, []);
 

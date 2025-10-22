@@ -65,6 +65,7 @@ function Hero() {
   //   },
   // ];
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
 
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
@@ -73,6 +74,27 @@ function Hero() {
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
       });
+    }
+  };
+
+  const handleCardClick = (index: number) => {
+    // Only apply click-to-expand on mobile (width <= 768px)
+    if (window.innerWidth <= 768) {
+      setActiveCardIndex(index);
+      if (sliderRef.current) {
+        const card = sliderRef.current.children[index] as HTMLElement;
+        if (card) {
+          const cardLeft = card.offsetLeft;
+          const cardWidth = card.offsetWidth;
+          const containerWidth = sliderRef.current.offsetWidth;
+          const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+          
+          sliderRef.current.scrollTo({
+            left: scrollPosition,
+            behavior: "smooth",
+          });
+        }
+      }
     }
   };
   const [cards, setCards] = useState<ServiceCard[]>([]);
@@ -136,9 +158,12 @@ function Hero() {
         <div className="hero-right">
           <div className="hero-overlay">
             <h2 className="hero-title">Our Services</h2>
-            <p className="hero-subtext">
+            <p className="hero-subtext hero-subtext-desktop">
               Explore Our Expertise in Personal Financial Planning, Business
               Financing, Retirement, Debt Management, and More.
+            </p>
+            <p className="hero-subtext hero-subtext-mobile">
+              We Provide Perfect IT Solutions For Your Business
             </p>
           </div>
         </div>
@@ -153,7 +178,11 @@ function Hero() {
 
           <div className="slider" ref={sliderRef}>
             {images.map((img, idx) => (
-              <div className="slider-item" key={idx}>
+              <div 
+                className={`slider-item ${idx === activeCardIndex ? 'active' : ''}`} 
+                key={idx}
+                onClick={() => handleCardClick(idx)}
+              >
                 <img
                   loading="lazy"
                   className="slider-img"

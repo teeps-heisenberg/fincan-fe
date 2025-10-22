@@ -1,3 +1,19 @@
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  width: 100%;
+  padding-top: 0; // Let individual sections handle their own spacing
+  
+  // Mobile responsive
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
+}
+
 .white-div-container{
     position: relative;
     z-index: 100000;
@@ -5,4 +21,11 @@
     margin-top: -50px;
     border-radius: 70px;
     background-color: rgb(255, 255, 255);
+
+    // Mobile responsive
+    @media (max-width: 768px) {
+        padding: 20px 0;
+        margin-top: -20px;
+        border-radius: 20px;
+    }
 }

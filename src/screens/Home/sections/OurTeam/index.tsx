@@ -57,7 +57,7 @@ function OurTeam() {
           strategies and honest advice you can rely on.
         </div>
         <div className="explore-more-team" onClick={() => navigate(`/about`)}>
-          Meet Our Team
+          Explore More
         </div>
       </div>
     </div>
