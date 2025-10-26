@@ -46,6 +46,7 @@ interface TeamMember {
   facebookUrl?: string;
   instagramUrl?: string;
   twitterUrl?: string;
+  linkedinUrl?: string;
 }
 
 function About() {
@@ -382,6 +383,7 @@ function About() {
                   facebookUrl={member.facebookUrl}
                   instagramUrl={member.instagramUrl}
                   twitterUrl={member.twitterUrl}
+                  linkedinUrl={member.linkedinUrl}
                 />
               ))}
             </div>
