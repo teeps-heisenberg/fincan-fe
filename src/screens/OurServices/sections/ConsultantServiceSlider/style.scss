@@ -1,6 +1,11 @@
 .consultant-slider-container {
-  padding: 60px 40px;
-  background-color: #f9f9f9;
+  padding: 60px 0;
+  background-color: transparent;
+  
+  // Desktop-specific padding to match card-column
+  @media (min-width: 769px) {
+    padding: 40px 120px !important;
+  }
 
   .slider-heading {
     font-size: 32px;
@@ -13,7 +18,14 @@
 
   .slider-wrapper {
     position: relative;
-    height: 290px; // Match the height when slider-item is hovered
+    height: 290px;
+    max-width: 100%; // ✅ Fix 1: match full width of section
+    margin: 0; // ✅ Fix 2: remove auto centering
+    padding: 0; // ✅ Fix 3: remove side padding to match card-column
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
     .arrow {

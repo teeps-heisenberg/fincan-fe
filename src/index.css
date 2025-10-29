@@ -18,6 +18,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -29,10 +30,19 @@ html, body {
 @media (max-width: 768px) {
   html {
     font-size: 14px;
+    scroll-behavior: auto; /* Disable smooth scroll on mobile for instant positioning */
   }
   
   body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure pages start from top on mobile */
+  #root {
+    position: relative;
+    min-height: 100vh;
   }
 }

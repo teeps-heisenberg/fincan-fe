@@ -146,8 +146,8 @@
         position: relative;
         width: 230px;
         height: 53px;
-        margin-top: 10%;
-        margin-left: 10%;
+        margin-top: 12%; // Increased from 10% to move slightly down
+        margin-left: 91px; // Align with the heading text (same as complete-solution left position)
         border-radius: 50px;
         padding: 21px 30px;
         gap: 10px;
@@ -189,9 +189,7 @@
 
         // Mobile responsive
         @media (max-width: 768px) {
-          left: 0;
-          margin: 0 auto;
-          top: 20px;
+          display: none; // Hide the 3 dots in mobile view
         }
 
         .ellipse-7,

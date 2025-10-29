@@ -103,6 +103,13 @@ function Hero() {
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
+    // Ensure page starts from top when component mounts
+    window.scrollTo(0, 0);
+    // Additional mobile fix
+    if (window.scrollY > 0) {
+      window.scrollTo(0, 0);
+    }
+    
     const fetchVisibleServices = async () => {
       setLoading(true);
       try {

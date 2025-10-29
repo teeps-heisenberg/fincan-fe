@@ -1,12 +1,12 @@
 .providing-rights-container {
-  background-color: #f8f9fa;
+  background-color: transparent; // Remove light gray background
   padding: 60px 0;
-  margin: 40px 0;
+  margin: 0 0 40px 0; // Remove top margin, keep bottom margin
 
   // Mobile responsive
   @media (max-width: 768px) {
     padding: 40px 0;
-    margin: 20px 0;
+    margin: 0 0 20px 0; // remove top margin to close gap
   }
 }
 
@@ -53,14 +53,14 @@
     .heading-providing {
       font-family: "Tiro Kannada", serif;
       font-weight: 400;
-      font-size: 48px;
-      line-height: 57px;
+      font-size: 58px; // Increased from 48px
+      line-height: 67px; // Increased from 57px
       color: #000;
 
       // Mobile responsive
       @media (max-width: 768px) {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 36px; // Increased from 28px
+        line-height: 44px; // Increased from 36px
         text-align: left; // Left align
       }
     }

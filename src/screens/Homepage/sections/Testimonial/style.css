@@ -34,16 +34,16 @@
     margin: 18px 0 8px;
     font-family: "Tiro Kannada";
     font-weight: 400;
-    font-size: 48px;
-    line-height: 54px;
+    font-size: 58px; /* Increased from 48px */
+    line-height: 64px; /* Increased from 54px */
     letter-spacing: 0%;
     text-transform: capitalize;
     color: #000;
 
     /* Mobile responsive */
     @media (max-width: 768px) {
-      font-size: 32px;
-      line-height: 40px;
+      font-size: 36px; /* Increased from 32px */
+      line-height: 44px; /* Increased from 40px */
       margin: 10px 0;
     }
   }
