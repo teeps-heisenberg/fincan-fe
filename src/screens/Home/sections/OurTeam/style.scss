@@ -117,14 +117,14 @@
     .meet-the-face {
       font-family: "Tiro Kannada";
       font-weight: 400;
-      font-size: 48px;
-      line-height: 55px;
+      font-size: 58px; // Increased from 48px
+      line-height: 65px; // Increased from 55px
       letter-spacing: 0%;
 
       // Mobile responsive
       @media (max-width: 768px) {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 32px; // Increased from 24px
+        line-height: 40px; // Increased from 32px
         text-align: left; // Left align
         display: inline; // Make inline so text flows
         max-width: 60%; // Leave space for button
@@ -175,7 +175,7 @@
         font-size: 12px;
         margin: 0;
         position: absolute; // Position opposite to heading
-        top: 40px; // Align with "Meet the faces" line
+        top: 70px; // Align with "Fincan Inc." line (moved down from 40px)
         right: 0;
       }
 

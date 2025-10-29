@@ -190,7 +190,7 @@ function About() {
       <div className="about-us-hero">
         <div className="left-side">
           <span>
-            About <span className="">us</span>
+            About <span className="">Us</span>
           </span>
           <span className="text-below-about">
             At FinCan Solutions Inc., we help entrepreneurs, developers, and

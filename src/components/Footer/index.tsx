@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import map from "../../assets/contact/map.jpg";
 import social from "../../assets/contact/Socialaccounts.png";
 import phone from "../../assets/contact/phone1.png";
@@ -93,21 +94,21 @@ function Footer({ blueSection = true }: FooterProps) {
 
           <div className="footer-section second">
             <div className="footer-column">
-              <h4>Lorem Ipsum</h4>
-              <p>Lorem Ipsum</p>
-              <p>Is Simply Dum</p>
-              <p>Text Of The</p>
-              <p>Printing</p>
+              <h4>Quick Links</h4>
+              <Link to="/" className="footer-link">Home</Link>
+              <Link to="/about" className="footer-link">About</Link>
+              <Link to="/ourservices" className="footer-link">Services</Link>
+              <Link to="/contactus" className="footer-link">Contact</Link>
             </div>
           </div>
 
           <div className="footer-section third">
             <div className="footer-column">
-              <h4>Lorem Has</h4>
-              <p>Lorem Ipsum</p>
-              <p>Is Simply Dum</p>
-              <p>Text Of The</p>
-              <p>Printing</p>
+              <h4>Our Team</h4>
+              <Link to="/about" className="footer-link">Meet Our Team</Link>
+              <Link to="/ourservices" className="footer-link">Our Services</Link>
+              <Link to="/casestudy" className="footer-link">Case Studies</Link>
+              <Link to="/contactus" className="footer-link">Get In Touch</Link>
             </div>
           </div>
         </div>

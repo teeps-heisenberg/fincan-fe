@@ -6,11 +6,6 @@ import "./style.scss";
 import Header from "../../components/Header";
 
 // Image imports
-import map from "../../assets/contact/map.jpg";
-import social from "../../assets/contact/Socialaccounts.png";
-import phone from "../../assets/contact/phone.png";
-import time from "../../assets/contact/time.png";
-import location from "../../assets/contact/location.png";
 import Footer from "../../components/Footer";
 
 export default function ContactUs() {
@@ -171,26 +166,8 @@ export default function ContactUs() {
           </button>
         </form>
 
-        {/* Mobile: Address at bottom */}
-        <div className="mobile-address">
-          <p className="address-text">
-            10700 ACADEMY RD NE, ALBUQUERQUE,<br />
-            NEW YORK , UNITED STATES<br />
-            (505) 299-5051
-          </p>
-        </div>
       </section>
 
-      {/* ----- MAP + SOCIAL ----- */}
-      <div className="below-blue-section">
-        <div className="left-image">
-          <img loading="lazy" src={map} alt="Case Study" className="map" />
-          <div className="social-div">
-            <img loading="lazy" src={social} alt="social" className="social" />
-          </div>
-        </div>
-        <div className="right-content"></div>
-      </div>
       <Footer blueSection={false} />
       {/* ----- CONSULTANCY SECTION ----- */}
       {/* <div className="consultancy-wrapper">
