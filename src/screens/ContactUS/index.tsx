@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Oval } from "react-loader-spinner";
@@ -19,6 +19,23 @@ export default function ContactUs() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+
+  // More aggressive scroll-to-top fix
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+    
+    // Immediate scroll
+    scrollToTop();
+    
+    // Additional attempts for mobile
+    setTimeout(scrollToTop, 0);
+    setTimeout(scrollToTop, 10);
+    setTimeout(scrollToTop, 50);
+  }, []);
 
   // Handle input changes
   const handleChange = (e: any) => {

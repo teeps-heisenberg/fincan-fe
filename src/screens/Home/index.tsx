@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/Header'
 import { CompleteSolution } from '../Homepage/sections/CompleteSolution'
 import ProvidingRights from './sections/ProvidingRights'
@@ -19,6 +19,23 @@ import m5 from '../../assets/marquee/img5.png'
 import './style.scss'
 function Home() {
     const imageArray = [m1, m2, m3, m4,m5];
+
+  // More aggressive scroll-to-top fix
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+    
+    // Immediate scroll
+    scrollToTop();
+    
+    // Additional attempts for mobile
+    setTimeout(scrollToTop, 0);
+    setTimeout(scrollToTop, 10);
+    setTimeout(scrollToTop, 50);
+  }, []);
 
   return (
     <div className="home-container">

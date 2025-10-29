@@ -5,13 +5,18 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top when route changes
+    // Force scroll to top when route changes
     window.scrollTo(0, 0);
     
-    // For mobile devices, also reset any potential scroll position
-    if (window.scrollY > 0) {
+    // Additional mobile fix - force immediate scroll
+    setTimeout(() => {
       window.scrollTo(0, 0);
-    }
+    }, 0);
+    
+    // Another mobile fix with requestAnimationFrame
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   }, [pathname]);
 
   return null;

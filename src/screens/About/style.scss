@@ -1,3 +1,12 @@
+/* Ensure About page starts from top */
+body {
+  scroll-behavior: auto !important;
+}
+
+html {
+  scroll-behavior: auto !important;
+}
+
 .bg-img {
   position: absolute;
   left: 0;
@@ -369,8 +378,7 @@
     .contact-us-btn {
       width: 160px;
       height: 60px;
-      top: 1577px;
-      left: 728px;
+      // Removed absolute positioning that was causing scroll issues
       gap: 10px;
       border-radius: 999px;
       display: flex;

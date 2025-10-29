@@ -1,7 +1,16 @@
+/* Ensure Contact Us page starts from top */
+body {
+  scroll-behavior: auto !important;
+}
+
+html {
+  scroll-behavior: auto !important;
+}
+
 .contact-section {
   display: flex;
   gap: 60px;
-  padding: 160px 60px 200px; // Increased bottom padding to extend blue area
+  padding: 120px 60px 200px; // Reduced top padding for better positioning
   background: linear-gradient(90deg, #005f77 0%, #018699 100%);
   position: relative;
   overflow: visible;
@@ -11,7 +20,7 @@
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 0;
-    padding: 0;
+    padding: 80px 20px 40px; // Add proper mobile padding
     height: auto;
     min-height: auto;
   }

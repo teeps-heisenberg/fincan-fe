@@ -154,6 +154,21 @@ function About() {
     },
   ];
   useEffect(() => {
+    // More aggressive scroll-to-top fix
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+    
+    // Immediate scroll
+    scrollToTop();
+    
+    // Additional attempts for mobile
+    setTimeout(scrollToTop, 0);
+    setTimeout(scrollToTop, 10);
+    setTimeout(scrollToTop, 50);
+    
     async function fetchTeamMembers() {
       try {
         const res = await fetch(`${baseUrl}/team-members?fromAdminPanel=false`);
