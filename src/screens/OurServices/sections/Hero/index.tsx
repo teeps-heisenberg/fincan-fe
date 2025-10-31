@@ -67,6 +67,19 @@ function Hero() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
 
+  // Center a specific card index within the slider viewport
+  const centerToIndex = (index: number) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    const card = slider.children[index] as HTMLElement | undefined;
+    if (!card) return;
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
+    const containerWidth = slider.offsetWidth;
+    const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+    slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+  };
+
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
       const scrollAmount = sliderRef.current.clientWidth / 1.2;
@@ -78,24 +91,8 @@ function Hero() {
   };
 
   const handleCardClick = (index: number) => {
-    // Only apply click-to-expand on mobile (width <= 768px)
-    if (window.innerWidth <= 768) {
-      setActiveCardIndex(index);
-      if (sliderRef.current) {
-        const card = sliderRef.current.children[index] as HTMLElement;
-        if (card) {
-          const cardLeft = card.offsetLeft;
-          const cardWidth = card.offsetWidth;
-          const containerWidth = sliderRef.current.offsetWidth;
-          const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
-          
-          sliderRef.current.scrollTo({
-            left: scrollPosition,
-            behavior: "smooth",
-          });
-        }
-      }
-    }
+    setActiveCardIndex(index);
+    centerToIndex(index);
   };
   const [cards, setCards] = useState<ServiceCard[]>([]);
   const navigate = useNavigate();
@@ -128,6 +125,11 @@ function Hero() {
     };
 
     fetchVisibleServices();
+    // Center initial slide so halves show on both sides (desktop)
+    setTimeout(() => {
+      setActiveCardIndex(1);
+      centerToIndex(1);
+    }, 0);
   }, []);
 
   if (loading) {

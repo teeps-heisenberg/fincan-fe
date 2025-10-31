@@ -1,8 +1,13 @@
+
 .main-div-success {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-bottom: 160px;
+  margin-bottom: 60px; // reduced so contact section sits closer
+  background: #ffffff; // ensure curve is visible
+  border-bottom-left-radius: 71px; // curved bottom like About
+  border-bottom-right-radius: 71px;
+  overflow: hidden; // keep contents within curve
   // color: #d40000;
 
   // Mobile responsive

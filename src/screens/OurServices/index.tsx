@@ -16,7 +16,7 @@ function OurServices() {
       const imageArray = [m1, m2, m3, m4,m5];
 
   return (
-    <div>
+    <div className="our-services-page">
         <Header/>
         <Hero/>
         {/* <ConsultantSlider/> */}

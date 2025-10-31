@@ -26,6 +26,7 @@ import team1 from "../../assets/team-1.jpg";
 import bullet from "../../assets/bullet.png";
 import { Group } from "../Homepage/sections/Group";
 import Footer from "../../components/Footer";
+import objects from "../../assets/objects.svg";
 import bg from "../../assets/common/circle-bg.png";
 import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";
@@ -203,6 +204,7 @@ function About() {
         <img loading="lazy" src={bg} alt="bg" />
       </div>
       <div className="about-us-hero">
+        <img loading="lazy" src={bg} alt="decor" className="circle-hero-bg" />
         <div className="left-side">
           <span>
             About <span className="">Us</span>
@@ -297,7 +299,10 @@ function About() {
             <div className="contact-us-btn">Contact Us</div>
           </div> */}
           <div className="content-div">
-            <span className="about-us-title">Meet Our Founder</span>
+            <div className="about-us-title-row">
+              <img loading="lazy" src={objects} alt="" className="about-title-icon" />
+              <span className="about-us-title">Meet Our Founder</span>
+            </div>
             <div className="founder-description">
               <p>
                 Founded by Adeel Moghal, a seasoned finance professional with

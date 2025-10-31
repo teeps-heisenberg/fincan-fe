@@ -33,13 +33,18 @@ html {
   //   padding: 60px 80px;
   gap: 40px;
   background-color: #fff;
+  position: relative; // allow absolute bg inside hero
   .left-side {
+    position: relative;
+    z-index: 1;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 24px;
     padding-left: 80px;
+
+    // removed per request - circle belongs below entire hero, not under text
 
     span:first-child {
       font-family: "Tiro Kannada";
@@ -85,6 +90,8 @@ html {
   }
 
   .right-side {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,6 +120,17 @@ html {
         object-fit: cover;
       }
     }
+  }
+  .circle-hero-bg {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 520px;
+    max-width: 55vw;
+    height: auto;
+    opacity: 0.4; // lightened effect under text
+    pointer-events: none;
+    z-index: 0; // behind text but above hero white bg
   }
 }
 @media (max-width: 1100px) {
@@ -289,15 +307,26 @@ html {
     flex-direction: column;
     gap: 20px;
 
+    .about-us-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-title-icon {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
     .about-us-title {
       color: #034833;
-
       font-family: "Plus Jakarta Sans";
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 14px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 20px; // bigger heading
+      line-height: 24px;
+      letter-spacing: 0.5px;
+      text-transform: none;
     }
 
     .header-fin-wis {

@@ -109,12 +109,27 @@
     flex: 1;
     min-width: 0;
     height: 422px;
-    border-radius: 20px;
+    border-radius: 12px; // Slightly curved edges in normal state
     background-size: cover;
     background-position: center;
-    border: none; // Remove the white border
-    transition: transform 0.25s ease, border-color 0.25s;
+    border: none;
+    transition: transform 0.25s ease, border-color 0.25s, flex 0.3s ease, border-radius 0.3s ease;
     overflow: hidden;
+
+    // Web view - hover effect only
+    @media (min-width: 769px) {
+      // Normal state - keep original (flex: 1, equal width)
+      
+      &.active {
+        flex: 2; // Expand more when hovered
+        min-width: 410px;
+        border-radius: 20px; // Rounded when hovered
+        
+        .detail-box-best-fin {
+          border-radius: 0 0 20px 20px; // Match card bottom
+        }
+      }
+    }
 
     .circle-service-card {
       position: absolute;
@@ -133,7 +148,7 @@
       height: auto;
       min-height: 250px;
       padding: 24px 30px;
-      border-radius: 20px;
+      border-radius: 0 0 12px 12px; // Match slight curve at bottom in normal state
 
       // Semi-transparent dark background with blur effect
       background-color: rgba(0, 0, 0, 0.6); // Dark transparent background
