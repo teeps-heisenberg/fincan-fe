@@ -3,16 +3,25 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-bottom: 60px; // reduced so contact section sits closer
-  background: #ffffff; // ensure curve is visible
-  border-bottom-left-radius: 71px; // curved bottom like About
-  border-bottom-right-radius: 71px;
-  overflow: hidden; // keep contents within curve
+  margin-bottom: 160px; // restore original default spacing
   // color: #d40000;
+}
 
-  // Mobile responsive
-  @media (max-width: 768px) {
-    margin-bottom: 80px;
+// Desktop-only curve and tighter spacing
+@media (min-width: 769px) {
+  .main-div-success {
+    margin-bottom: 60px; // only on desktop
+    background: #ffffff; // ensure curve is visible
+    border-bottom-left-radius: 71px; // curved bottom like About
+    border-bottom-right-radius: 71px;
+    overflow: hidden; // keep contents within curve
+  }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .main-div-success {
+    margin-bottom: 80px; // original mobile spacing
     gap: 20px;
   }
 }

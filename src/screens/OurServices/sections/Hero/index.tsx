@@ -31,6 +31,8 @@ function Hero() {
     { src: img4, detail: "Startup Funding Advisory" },
     { src: img5, detail: "Estate Planning" },
     { src: img6, detail: "Investment Advice" },
+    // Extra card to ensure side halves are visible on wide screens
+    { src: img1, detail: "Corporate Finance" },
   ];
   // const cards: CardData[] = [
   //   {
@@ -68,7 +70,7 @@ function Hero() {
   const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
 
   // Center a specific card index within the slider viewport
-  const centerToIndex = (index: number) => {
+  const centerToIndex = (index: number, smooth: boolean = true) => {
     const slider = sliderRef.current;
     if (!slider) return;
     const card = slider.children[index] as HTMLElement | undefined;
@@ -77,17 +79,15 @@ function Hero() {
     const cardWidth = card.offsetWidth;
     const containerWidth = slider.offsetWidth;
     const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
-    slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    slider.scrollTo({ left: scrollPosition, behavior: smooth ? 'smooth' : 'auto' as ScrollBehavior });
   };
 
   const scroll = (direction: "left" | "right") => {
-    if (sliderRef.current) {
-      const scrollAmount = sliderRef.current.clientWidth / 1.2;
-      sliderRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
+    const delta = direction === "left" ? -1 : 1;
+    const total = images.length;
+    const nextIndex = (activeCardIndex + delta + total) % total;
+    setActiveCardIndex(nextIndex);
+    centerToIndex(nextIndex, true);
   };
 
   const handleCardClick = (index: number) => {
@@ -126,10 +126,23 @@ function Hero() {
 
     fetchVisibleServices();
     // Center initial slide so halves show on both sides (desktop)
-    setTimeout(() => {
-      setActiveCardIndex(1);
-      centerToIndex(1);
+    const initTimer = setTimeout(() => {
+      const middle = Math.min(
+        Math.max(1, Math.floor(images.length / 2)),
+        Math.max(1, images.length - 2)
+      );
+      setActiveCardIndex(middle);
+      centerToIndex(middle, false); // snap to center immediately
+      // one-time auto slide to the next card for a pleasant intro
+      const autoTimer = setTimeout(() => {
+        const next = (middle + 1) % images.length;
+        setActiveCardIndex(next);
+        centerToIndex(next, true);
+      }, 1200);
+      return () => clearTimeout(autoTimer);
     }, 0);
+
+    return () => clearTimeout(initTimer);
   }, []);
 
   if (loading) {

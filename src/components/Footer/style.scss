@@ -36,11 +36,12 @@
 }
 
 // Tighter spacing variant for landing page only
-.consultancy-wrapper.home-tight {
-  // Landing only: nudge content slightly upward
-  padding: 130px 20px 20px 90px; // was 150px
-  margin-top: -100px; // keep original overlap
-  // No curve here; curve will be applied to the section above (SuccessStories)
+// Landing-only desktop tweak (mobile stays original)
+@media (min-width: 769px) {
+  .consultancy-wrapper.home-tight {
+    padding: 130px 20px 20px 90px; // was 150px
+    margin-top: -100px; // keep original overlap
+  }
 }
 
 /* ─── Left side ─────────────────────────── */

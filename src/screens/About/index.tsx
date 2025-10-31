@@ -204,11 +204,9 @@ function About() {
         <img loading="lazy" src={bg} alt="bg" />
       </div>
       <div className="about-us-hero">
-        <img loading="lazy" src={bg} alt="decor" className="circle-hero-bg" />
         <div className="left-side">
-          <span>
-            About <span className="">Us</span>
-          </span>
+          <img loading="lazy" src={bg} alt="decor" className="circle-hero-bg" />
+          <span>About Us</span>
           <span className="text-below-about">
             At FinCan Solutions Inc., we help entrepreneurs, developers, and
             investors transform business ideas into fundable, lender-ready
@@ -300,8 +298,8 @@ function About() {
           </div> */}
           <div className="content-div">
             <div className="about-us-title-row">
-              <img loading="lazy" src={objects} alt="" className="about-title-icon" />
               <span className="about-us-title">Meet Our Founder</span>
+              <img loading="lazy" src={objects} alt="" className="about-title-icon" />
             </div>
             <div className="founder-description">
               <p>

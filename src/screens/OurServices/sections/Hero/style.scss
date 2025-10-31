@@ -9,9 +9,9 @@ body {
   // Full-hero circular background
   background-image: url('../../../../assets/aboutUs/Group-bg.png');
   background-repeat: no-repeat;
-  // Shift BG toward the right (hero overlay side) so it's centered under the title
-  background-position: 70% center; // was center center
-  background-size: 135% auto; // slightly larger for full coverage
+  // Center the BG in hero and let it fill neatly
+  background-position: center center;
+  background-size: cover;
   
   .background-img-circle {
     display: none; // Disable separate BG element to prevent white overlay
@@ -27,7 +27,8 @@ body {
       flex: 0.4;
       z-index: 100;
       position: relative;
-      top: 90px;
+      top: 100px; // nudged a bit further down
+      left: -10px; // subtle left shift
       .hero-img {
         width: 100%;
         height: 100%;
@@ -46,8 +47,8 @@ body {
 
       .hero-overlay {
         opacity: 1;
-        // Keep only semi-transparent gradient so hero background image shows through
-        background: linear-gradient(90deg, rgba(0,95,119,0.92) 0%, rgba(1,134,153,0.92) 100%);
+        // Semi-transparent gradient only; circles come from .main-hero and cover entire hero
+        background: linear-gradient(90deg, rgba(0,95,119,0.85) 0%, rgba(1,134,153,0.85) 100%);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -204,7 +205,7 @@ body {
       position: relative;
       height: 290px;
       width: 100%;
-      max-width: 1230px; // viewport for 3 full + halves
+      max-width: 1400px; // widen viewport so side cards sit closer to page edges
       margin: 0 auto; // center viewport
       padding: 0;
       overflow: hidden; // clip edges for half-cards
@@ -245,7 +246,7 @@ body {
         overflow-x: auto;
         scroll-behavior: smooth;
         gap: 30px;
-        padding: 0 180px; // side padding reveals half cards
+        padding: 0 120px; // reduce side padding so half-cards sit further toward edges
         padding-bottom: 10px;
         height: 100%;
         justify-content: flex-start;
@@ -313,7 +314,8 @@ body {
           }
         }
 
-        /* HOVER EFFECT FOR DESKTOP */
+        /* ACTIVE OR HOVER EFFECT FOR DESKTOP */
+        &.active,
         &:hover {
           height: 290px;
 
@@ -326,7 +328,10 @@ body {
           }
         }
 
-        /* NO ACTIVE CLASS EFFECT ON DESKTOP - only on mobile */
+        /* Ensure inactive items are slightly dimmed */
+        &:not(.active):not(:hover) .overlay-consultant {
+          opacity: 0;
+        }
       }
     }
 
@@ -492,10 +497,10 @@ body {
 
     .card-title {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: 400;
       color: #000;
       margin-bottom: 10px;
-      font-family: "Poppins", sans-serif;
+      font-family: "Tiro Kannada", serif;
     }
 
     .card-divider {
