@@ -3,7 +3,7 @@ import "./teamMemberCard.scss";
 import facebook from "../../assets/aboutUs/team/fb.png";
 import instagram from "../../assets/aboutUs/team/instagram.png";
 import twitter from "../../assets/aboutUs/team/twitter.png";
-
+//Commented Code
 // import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 interface TeamMemberCardProps {
