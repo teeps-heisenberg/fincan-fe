@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './style.scss'
 import Header from '../../components/Header'
 import ConsultantSlider from './sections/ConsultantServiceSlider'
@@ -14,9 +14,26 @@ import Footer from '../../components/Footer'
 import Hero from './sections/Hero'
 function OurServices() {
       const imageArray = [m1, m2, m3, m4,m5];
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+    scrollToTop();
+    // a few retries for mobile browsers
+    const t1 = setTimeout(scrollToTop, 0);
+    const t2 = setTimeout(scrollToTop, 50);
+    const t3 = setTimeout(scrollToTop, 100);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, []);
 
   return (
-    <div>
+    <div className="our-services-page">
         <Header/>
         <Hero/>
         {/* <ConsultantSlider/> */}

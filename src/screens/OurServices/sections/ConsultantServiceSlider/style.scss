@@ -8,20 +8,22 @@
   }
 
   .slider-heading {
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 42px;
+    font-weight: 400;
     color: #000;
     margin-bottom: 30px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Tiro Kannada', serif; // use requested font
     text-align: center;
   }
 
   .slider-wrapper {
     position: relative;
     height: 290px;
-    max-width: 100%; // ✅ Fix 1: match full width of section
-    margin: 0; // ✅ Fix 2: remove auto centering
-    padding: 0; // ✅ Fix 3: remove side padding to match card-column
+    width: 100%;
+    max-width: 1230px; // viewport width for 3 full + halves (desktop)
+    margin: 0 auto; // center within container
+    padding: 0;
+    overflow: hidden; // clip excess to create half-card effect edges
     
     display: flex;
     align-items: center;
@@ -46,22 +48,20 @@
         background: rgba(0, 0, 0, 0.8);
       }
 
-      &.left {
-        left: -20px;
-      }
-
-      &.right {
-        right: -20px;
-      }
+      &.left { left: 10px; }
+      &.right { right: 10px; }
     }
 
     .slider {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
-      gap: 20px;
+      gap: 30px; // spacing between cards
+      padding: 0 180px; // key: show half cards on both sides
       padding-bottom: 10px;
       height: 100%;
+      justify-content: flex-start; // start from left
+      scroll-snap-type: x mandatory; // snap cards to center
       &::-webkit-scrollbar {
         display: none;
       }
@@ -69,13 +69,15 @@
 
 .slider-item {
   position: relative;
-  width: 274px; 
+  width: 260px; 
+  flex: 0 0 260px; // fixed card width
   height: 190px;
   flex-shrink: 0;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   transition: height 0.3s ease;
+  scroll-snap-align: center; // align each card to center on scroll
 
   img {
     width: 100%; 
@@ -108,8 +110,8 @@
     flex-direction: column;
 
     .text-slider-detail{
-        font-family: 'Poppins';
-font-weight: 600;
+        font-family: 'Tiro Kannada', serif;
+font-weight: 400;
 font-size: 20px;
 line-height: 100%;
 letter-spacing: 0%;
@@ -126,8 +128,7 @@ text-align: start;
   }
 
   &:hover {
-    height: 290px; //height adjust from hereeee
-    width: 235px;
+    height: 290px; // height adjust on hover
 
     img {
       transform: scale(1.05);
@@ -142,9 +143,22 @@ text-align: start;
   }
 
   @media (max-width: 768px) {
+    .slider {
+      gap: 16px;
+      padding: 0 60px; // smaller side padding for mobile
+      scroll-snap-type: x mandatory;
+    }
+
     .slider-item {
-      min-width: 160px;
-      height: 100px;
+      min-width: 180px;
+      height: 160px;
+      flex: 0 0 180px;
+      scroll-snap-align: center;
+    }
+
+    .slider-wrapper {
+      max-width: 100%;
+      overflow: visible; // allow natural overflow on small screens
     }
 
     .arrow {

@@ -51,7 +51,7 @@ function Home() {
           <Bars/>
           <SuccessStories/>
         </div>
-        <Footer/>
+        <Footer homeTightSpacing={true}/>
         {/* <Group /> */}
       </div>
     </div>

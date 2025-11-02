@@ -13,13 +13,14 @@ import "./style.scss";
 
 interface FooterProps {
   blueSection?: boolean;
+  homeTightSpacing?: boolean; // apply tighter spacing on landing page only
 }
 
-function Footer({ blueSection = true }: FooterProps) {
+function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
   return (
     <div>
       {blueSection && (
-        <div className="consultancy-wrapper">
+        <div className={`consultancy-wrapper ${homeTightSpacing ? 'home-tight' : ''}`}>
           <div className="consultancy-left">
             <h2 className="title">Contact us For the <span className="blue-text">Consultancy</span></h2>
             <p className="subtitle">

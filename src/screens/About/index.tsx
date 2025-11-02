@@ -26,6 +26,7 @@ import team1 from "../../assets/team-1.jpg";
 import bullet from "../../assets/bullet.png";
 import { Group } from "../Homepage/sections/Group";
 import Footer from "../../components/Footer";
+import objects from "../../assets/objects.svg";
 import bg from "../../assets/common/circle-bg.png";
 import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";
@@ -205,9 +206,8 @@ function About() {
       </div>
       <div className="about-us-hero">
         <div className="left-side">
-          <span>
-            About <span className="">Us</span>
-          </span>
+          <img loading="lazy" src={bg} alt="decor" className="circle-hero-bg" />
+          <span>About Us</span>
           <span className="text-below-about">
             At FinCan Solutions Inc., we help entrepreneurs, developers, and
             investors transform business ideas into fundable, lender-ready
@@ -298,7 +298,10 @@ function About() {
             <div className="contact-us-btn">Contact Us</div>
           </div> */}
           <div className="content-div">
-            <span className="about-us-title">Meet Our Founder</span>
+            <div className="about-us-title-row">
+              <span className="about-us-title">Meet Our Founder</span>
+              <img loading="lazy" src={objects} alt="" className="about-title-icon" />
+            </div>
             <div className="founder-description">
               <p>
                 Founded by Adeel Moghal, a seasoned finance professional with

@@ -109,7 +109,7 @@
 
       // Mobile responsive
       @media (max-width: 768px) {
-        font-size: 16px;
+        font-size: 20px; // make label a bit bigger on mobile
         text-align: left; // Left align
       }
     }
@@ -175,8 +175,13 @@
         font-size: 12px;
         margin: 0;
         position: absolute; // Position opposite to heading
-        top: 70px; // Align with "Fincan Inc." line (moved down from 40px)
+        top: 100px; // lower to align with "Fincan Inc." baseline
         right: 0;
+      }
+
+      // Extra small devices fine-tune
+      @media (max-width: 480px) {
+        top: 108px;
       }
 
       // &:hover {

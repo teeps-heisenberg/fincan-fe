@@ -6,25 +6,15 @@ body {
 .main-hero {
   position: relative; // Add relative positioning to contain background
   overflow: hidden; // Prevent background from extending beyond hero section
+  // Full-hero circular background
+  background-image: url('../../../../assets/aboutUs/Group-bg.png');
+  background-repeat: no-repeat;
+  // Center the BG in hero and let it fill neatly
+  background-position: center center;
+  background-size: cover;
   
   .background-img-circle {
-    position: absolute;
-    z-index: -1; // Lower z-index to stay behind content
-    top: 400px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 50vh; // Limit to half viewport height
-    overflow: hidden; // Prevent overflow
-
-    img {
-      display: block;
-      height: auto;
-      max-height: 50vh; // Limit image height to half viewport
-    }
-
-    @media (max-width: 768px) {
-      display: none;
-    }
+    display: none; // Disable separate BG element to prevent white overlay
   }
   .hero-container {
     display: flex;
@@ -37,7 +27,8 @@ body {
       flex: 0.4;
       z-index: 100;
       position: relative;
-      top: 90px;
+      top: 100px; // nudged a bit further down
+      left: -10px; // subtle left shift
       .hero-img {
         width: 100%;
         height: 100%;
@@ -52,14 +43,15 @@ body {
       align-items: flex-end;
       justify-content: flex-end;
       overflow: hidden;
+        z-index: 1; // keep above any negative z-index backgrounds
 
       .hero-overlay {
         opacity: 1;
-        background: linear-gradient(
-          90deg,
-          #005f77 0%,
-          #018699 100%
-        );
+        // Semi-transparent gradient only; circles come from .main-hero and cover entire hero
+        background: linear-gradient(90deg, rgba(0,95,119,0.85) 0%, rgba(1,134,153,0.85) 100%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
         width: 100%;
         height: 100%;
         border-bottom-left-radius: 262px;
@@ -69,8 +61,8 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-left: 60px; // Move content slightly left
-        padding-top: 60px; // Move content slightly down
+        padding-left: 0; // center the content horizontally
+        padding-top: 0; // center the content vertically
 
         .hero-title {
           margin-bottom: 10px;
@@ -106,6 +98,11 @@ body {
     @media (max-width: 768px) {
       flex-direction: column;
       height: 400px;
+      // On mobile, keep the background centered
+      :host, .main-hero {
+        background-position: center center;
+        background-size: 120% auto;
+      }
       min-height: 400px;
       gap: 0;
       width: 100%;
@@ -196,28 +193,26 @@ body {
     }
 
     .slider-heading {
-      font-size: 32px;
-      font-weight: 600;
+      font-size: 42px;
+      font-weight: 400;
       color: #000;
       margin-bottom: 30px;
-      font-family: "Poppins", sans-serif;
+      font-family: "Tiro Kannada", serif; // requested font
       text-align: center;
     }
 
     .slider-wrapper {
       position: relative;
       height: 290px;
-      max-width: 100%; // ✅ Fix 1: match full width of section
-      margin: 0; // ✅ Fix 2: remove auto centering
-      padding: 0; // ✅ Fix 3: remove side padding to match card-column
+      width: 100%;
+      max-width: 1400px; // widen viewport so side cards sit closer to page edges
+      margin: 0 auto; // center viewport
+      padding: 0;
+      overflow: hidden; // clip edges for half-cards
       
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      @media (min-width: 769px) {
-        padding: 0; // ✅ make sure no inner padding on desktop
-      }
 
       .arrow {
         position: absolute;
@@ -250,10 +245,12 @@ body {
         display: flex;
         overflow-x: auto;
         scroll-behavior: smooth;
-        gap: 15px; // Reduced gap to fit more images
+        gap: 30px;
+        padding: 0 120px; // reduce side padding so half-cards sit further toward edges
         padding-bottom: 10px;
         height: 100%;
-        justify-content: flex-start; // Start from left to show more images
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
         &::-webkit-scrollbar {
           display: none;
         }
@@ -261,14 +258,16 @@ body {
 
       .slider-item {
         position: relative;
-        width: 260px; // Smaller width to fit more images
+        width: 260px; // card width
+        flex: 0 0 260px; // fixed card width
         height: 190px;
         flex-shrink: 0;
         border-radius: 16px;
         overflow: hidden;
         cursor: pointer;
         transition: height 0.3s ease;
-        margin: 0 8px; // Reduced margin to fit more images
+        margin: 0 8px;
+        scroll-snap-align: center; // snap to center
 
         img {
           width: 100%;
@@ -288,35 +287,35 @@ body {
           color: #fff;
           opacity: 0;
           display: flex;
-          justify-content: end;
-          align-items: center;
+          justify-content: flex-end; // align content to bottom
+          align-items: flex-start;   // start horizontally (left)
           border-radius: 16px;
           transition: opacity 0.3s ease;
           z-index: 2;
           font-size: 18px;
           font-family: "Poppins", sans-serif;
-          text-align: center;
-          padding: 60px;
-          padding-bottom: 60px;
+          text-align: left;
+          padding: 20px;
           flex-direction: column;
 
           .text-slider-detail {
-            font-family: "Poppins";
-            font-weight: 600;
+            font-family: "Tiro Kannada", serif;
+            font-weight: 400;
             font-size: 20px;
-            line-height: 100%;
+            line-height: 120%;
             letter-spacing: 0%;
-            text-align: start;
+            text-align: left;
           }
           .line-slider {
             margin-top: 10px;
             height: 4px;
-            width: 110%;
+            width: 60px;
             background-color: #5aafff;
           }
         }
 
-        /* HOVER EFFECT FOR DESKTOP */
+        /* ACTIVE OR HOVER EFFECT FOR DESKTOP */
+        &.active,
         &:hover {
           height: 290px;
 
@@ -329,7 +328,10 @@ body {
           }
         }
 
-        /* NO ACTIVE CLASS EFFECT ON DESKTOP - only on mobile */
+        /* Ensure inactive items are slightly dimmed */
+        &:not(.active):not(:hover) .overlay-consultant {
+          opacity: 0;
+        }
       }
     }
 
@@ -337,8 +339,10 @@ body {
       padding: 40px 16px; // Keep mobile padding consistent
 
       .slider-heading {
-        font-size: 24px;
+        font-size: 28px;
         margin-bottom: 20px;
+        font-family: "Tiro Kannada", serif;
+        font-weight: 400;
       }
 
       .slider-wrapper {
@@ -378,26 +382,27 @@ body {
           }
 
           .overlay-consultant {
-            padding: 20px 12px;
+            padding: 16px 12px;
             border-radius: 18px;
             opacity: 0.7;
-
+            justify-content: flex-end;
+            align-items: flex-start;
             .text-slider-detail {
               font-family: "Poppins";
               font-weight: 600;
               font-size: 14px;
               line-height: 20px;
               letter-spacing: 0%;
-              text-align: center;
+              text-align: left;
             }
 
             .line-slider {
               margin-top: 6px;
               height: 2px;
-              width: 70%;
+              width: 50px;
               background-color: #5aafff;
-              margin-left: auto;
-              margin-right: auto;
+              margin-left: 0;
+              margin-right: 0;
             }
           }
 
@@ -492,10 +497,10 @@ body {
 
     .card-title {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: 400;
       color: #000;
       margin-bottom: 10px;
-      font-family: "Poppins", sans-serif;
+      font-family: "Tiro Kannada", serif;
     }
 
     .card-divider {

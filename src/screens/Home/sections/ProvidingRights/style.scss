@@ -1,12 +1,31 @@
 .providing-rights-container {
   background-color: transparent; // Remove light gray background
-  padding: 60px 0;
+  padding: 0 0 40px 0; // Remove top padding to allow curve to show
   margin: 0 0 40px 0; // Remove top margin, keep bottom margin
+  overflow: visible; // Allow curve to be visible
 
   // Mobile responsive
   @media (max-width: 768px) {
-    padding: 40px 0;
+    padding: 0 0 20px 0;
     margin: 0 0 20px 0; // remove top margin to close gap
+  }
+}
+
+.curved-about-wrapper {
+  padding: 50px 0;
+  border-radius: 71px 71px 0 0; // Only curve top corners
+  position: relative;
+  bottom: 40px;
+  z-index: 1000;
+  background: rgb(255, 255, 255);
+  margin-bottom: -40px; // Compensate for negative bottom
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    border-radius: 40px 40px 0 0;
+    bottom: 20px;
+    padding: 30px 0;
+    margin-bottom: -20px;
   }
 }
 
@@ -173,7 +192,7 @@
 }
 
 .image-slider {
-  margin-top: 80px;
+  margin-top: 40px; // Reduced since curved wrapper has margin-bottom
   display: flex;
   justify-content: center;
   gap: 24px; // Increased gap

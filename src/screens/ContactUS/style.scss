@@ -15,6 +15,7 @@ html {
   position: relative;
   overflow: visible;
   min-height: 120vh; // Increased height to cover contact form completely
+  align-items: flex-start; // top align columns so form and text start together
 
   // Mobile responsive
   @media (max-width: 768px) {
@@ -28,7 +29,9 @@ html {
   .contact-info {
     color: #ffffff;
     padding: 50px 0 0 10px;
-    width: 60%;
+    width: 50%;
+    order: 0; // text on the left
+    margin-top: 28px; // lower the text slightly
     
     .info-title {
       font-weight: 700;
@@ -38,7 +41,7 @@ html {
       font-size: 42px;
       line-height: 100%;
       letter-spacing: 0%;
-      text-align: center;
+      text-align: left;
     }
     
     .info-subtitle {
@@ -48,7 +51,7 @@ html {
       font-size: 36px;
       line-height: normal;
       letter-spacing: 0%;
-      text-align: center;
+      text-align: left;
     }
 
     // Mobile responsive
@@ -57,6 +60,8 @@ html {
       padding: 40px 20px;
       text-align: center;
       background: linear-gradient(90deg, #005f77 0%, #018699 100%);
+      order: 1; // text below form on mobile
+      margin-top: 0;
 
       .info-title {
         font-size: 24px;
@@ -131,7 +136,8 @@ html {
 
   /* ---------- RIGHT  FORM ------------ */
   .contact-form {
-    width: 450px;
+    width: 40%;
+    max-width: 480px;
     height: auto;
     background: #ffffff;
     border-radius: 20px;
@@ -140,12 +146,13 @@ html {
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    /* Position form higher up */
-    position: absolute;
-    right: 60px;
-    top: 70%;
-    transform: translateY(-50%);
+    /* align within flex flow, not absolute */
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    order: 1;
+    margin: 16px 0 30px;
 
     // Mobile responsive
     @media (max-width: 768px) {
@@ -626,6 +633,14 @@ html {
       text-align: center;
       display: none; // Hide desktop info on mobile
 
+      // Ensure headings remain centered on mobile
+      .info-title {
+        text-align: center;
+      }
+      .info-subtitle {
+        text-align: center;
+      }
+
       // Title section at top
       .info-title {
         font-weight: 700;
@@ -690,9 +705,9 @@ html {
     }
 
     .contact-form {
-      width: calc(100% - 40px);
-      max-width: 420px;
-      margin: 0 auto 30px;
+      width: 50%;
+      max-width: none;
+      margin: 16px 0 30px; // match text column top offset
       height: auto;
       background: linear-gradient(135deg, #00798f 0%, #00a5b8 100%); // Blue gradient background
       border-radius: 20px;
@@ -703,7 +718,15 @@ html {
       gap: 16px;
       position: static;
       right: auto;
-      order: 0; // Form in middle (after title, before address)
+      order: 1; // form on the right (after text)
+      align-self: auto; // follow container alignment
+
+      @media (max-width: 768px) {
+        width: calc(100% - 40px);
+        max-width: 100%;
+        order: 0; // ensure form stays on top on mobile
+        align-self: auto;
+      }
 
       .input-row {
         display: flex;

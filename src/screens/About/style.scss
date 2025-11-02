@@ -24,6 +24,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center; // center the bg image like services hero
   }
 }
 .about-us-hero {
@@ -33,7 +34,10 @@ html {
   //   padding: 60px 80px;
   gap: 40px;
   background-color: #fff;
+  position: relative; // allow absolute bg inside hero
   .left-side {
+    position: relative;
+    z-index: 1;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -41,14 +45,25 @@ html {
     gap: 24px;
     padding-left: 80px;
 
-    span:first-child {
+    // removed per request - circle belongs below entire hero, not under text
+
+    > span:first-of-type {
       font-family: "Tiro Kannada";
       color: #000;
       font-weight: 400;
-      font-size: 64px;
-      line-height: 73px;
+      font-size: 50px; // increased for web view
+      line-height: 100px;
       letter-spacing: 0%;
       text-align: left;
+      display: inline-block;
+      white-space: nowrap;
+
+      .about-us-hero__us {
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        display: inline;
+      }
 
       .blue-text {
         color: #5aafff;
@@ -82,9 +97,23 @@ html {
         background: #004170;
       }
     }
+
+    .circle-hero-bg {
+      position: absolute;
+      left: -80px;
+      top: -80px;
+      width: 1100px;
+      max-width: 85vw;
+      height: auto;
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0; // behind the text within left-side
+    }
   }
 
   .right-side {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,6 +143,7 @@ html {
       }
     }
   }
+  // moved circle-hero-bg under .left-side for stacking under text only
 }
 @media (max-width: 1100px) {
   .about-us-hero {
@@ -126,9 +156,9 @@ html {
       width: 100%;
       align-items: flex-start;
 
-      span:first-child {
+      > span:first-of-type {
         margin: auto;
-        display: flex;
+        display: inline-block;
         font-size: 48px;
         line-height: 56px;
       }
@@ -189,7 +219,7 @@ html {
       text-align: center;
       gap: 20px; // Add gap between elements
 
-      span:first-child {
+      > span:first-of-type {
         font-size: 40px;
         line-height: 48px;
         margin-bottom: 20px; // Increased from 16px to 20px
@@ -222,6 +252,14 @@ html {
         &:hover {
           background: #004170;
         }
+      }
+
+      .circle-hero-bg {
+        left: -30px;
+        top: -20px;
+        width: 120%;
+        max-width: none;
+        opacity: 0.18;
       }
     }
 
@@ -289,15 +327,26 @@ html {
     flex-direction: column;
     gap: 20px;
 
+    .about-us-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-title-icon {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
     .about-us-title {
       color: #034833;
-
-      font-family: "Plus Jakarta Sans";
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 14px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
+      font-family: "Tiro Kannada";
+      font-weight: 700;
+      font-size: 20px; // bigger heading
+      line-height: 24px;
+      letter-spacing: 0.5px;
+      text-transform: none;
     }
 
     .header-fin-wis {
@@ -387,7 +436,7 @@ html {
       background: linear-gradient(90deg, #005f77 0%, #018699 100%);
       font-family: "Plus Jakarta Sans";
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px; // larger text
       line-height: 30px;
       letter-spacing: 0%;
       color: #f9f9f9;
@@ -520,7 +569,7 @@ html {
         background: linear-gradient(90deg, #005f77 0%, #018699 100%);
         font-family: "Plus Jakarta Sans";
         font-weight: 600;
-        font-size: 13px;
+        font-size: 15px; // slightly larger text on mobile
         line-height: 20px;
         color: #f9f9f9;
         cursor: pointer;
@@ -631,6 +680,7 @@ html {
   &__title {
     font-size: 32px;
     font-weight: bold;
+    font-family: "Tiro Kannada";
     margin-bottom: 16px;
     display: block;
   }
@@ -729,12 +779,12 @@ html {
     .ethics-title {
       font-size: 32px;
       font-weight: 400;
+      font-family: "Tiro Kannada";
       margin-bottom: 16px;
       text-align: left;
       width: 550px;
       padding-bottom: 30px;
       color: #14293e;
-      font-family: "Fjord";
       line-height: 40px;
       letter-spacing: 0%;
     }
