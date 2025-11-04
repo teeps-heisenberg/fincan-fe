@@ -162,15 +162,15 @@ function About() {
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
     };
-    
+
     // Immediate scroll
     scrollToTop();
-    
+
     // Additional attempts for mobile
     setTimeout(scrollToTop, 0);
     setTimeout(scrollToTop, 10);
     setTimeout(scrollToTop, 50);
-    
+
     async function fetchTeamMembers() {
       try {
         const res = await fetch(`${baseUrl}/team-members?fromAdminPanel=false`);
@@ -300,7 +300,12 @@ function About() {
           <div className="content-div">
             <div className="about-us-title-row">
               <span className="about-us-title">Meet Our Founder</span>
-              <img loading="lazy" src={objects} alt="" className="about-title-icon" />
+              <img
+                loading="lazy"
+                src={objects}
+                alt=""
+                className="about-title-icon"
+              />
             </div>
             <div className="founder-description">
               <p>
@@ -397,6 +402,8 @@ function About() {
                     member.description ||
                     "There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available."
                   }
+                  phone={member.phone}
+                  experience={member.experience}
                   image={member.image?.url}
                   facebookUrl={member.facebookUrl}
                   instagramUrl={member.instagramUrl}
