@@ -10,11 +10,11 @@ html {
 .contact-section {
   display: flex;
   gap: 60px;
-  padding: 120px 60px 200px; // Reduced top padding for better positioning
+  padding: 120px 60px 80px; // Reduced bottom padding so footer starts immediately
   background: linear-gradient(90deg, #005f77 0%, #018699 100%);
   position: relative;
   overflow: visible;
-  min-height: 120vh; // Increased height to cover contact form completely
+  min-height: auto; // Remove fixed height so section ends naturally
   align-items: flex-start; // top align columns so form and text start together
 
   // Mobile responsive
@@ -29,9 +29,9 @@ html {
   .contact-info {
     color: #ffffff;
     padding: 50px 0 0 10px;
-    width: 50%;
+    width: 45%; // reduced width to make room for form on right
     order: 0; // text on the left
-    margin-top: 28px; // lower the text slightly
+    margin-top: 0; // remove top margin to align with form
     
     .info-title {
       font-weight: 700;
@@ -39,9 +39,35 @@ html {
       font-family: "Poppins";
       font-weight: 600;
       font-size: 42px;
-      line-height: 100%;
+      line-height: 120%;
       letter-spacing: 0%;
-      text-align: left;
+      text-align: center; // center aligned
+    }
+    
+    .info-title-fincan {
+      display: block;
+      margin-top: 8px;
+    }
+    
+    .info-description {
+      margin-top: 24px;
+      max-width: 100%;
+      text-align: center; // center align with second heading
+      
+      p {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #ffffff;
+        margin-bottom: 18px;
+        text-align: center; // center aligned with "with FinCan Solutions"
+        max-width: 100%;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     
     .info-subtitle {
@@ -67,6 +93,18 @@ html {
         font-size: 24px;
         line-height: 32px;
         margin-bottom: 12px;
+        text-align: center; // center on mobile too
+      }
+      
+      .info-description {
+        margin-top: 16px;
+        
+        p {
+          font-size: 14px;
+          line-height: 1.5;
+          text-align: justify;
+          margin-bottom: 12px;
+        }
       }
 
       .info-subtitle {
@@ -136,8 +174,8 @@ html {
 
   /* ---------- RIGHT  FORM ------------ */
   .contact-form {
-    width: 40%;
-    max-width: 480px;
+    width: 45%;
+    max-width: 520px;
     height: auto;
     background: #ffffff;
     border-radius: 20px;
@@ -148,11 +186,14 @@ html {
     gap: 16px;
     /* align within flex flow, not absolute */
     position: relative;
+    margin-left: auto; // push form more to the right
     right: auto;
     top: auto;
     transform: none;
     order: 1;
-    margin: 16px 0 30px;
+    margin-top: 60px; // move form down to align with second heading
+    margin-bottom: 30px;
+    align-self: flex-start; // align form to start with heading
 
     // Mobile responsive
     @media (max-width: 768px) {
@@ -606,21 +647,31 @@ html {
         font-size: 22px;
         line-height: 30px;
         color: #000000;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
 
         // "Consultancy" in blue
         &::after {
           content: none;
         }
       }
-
-      p {
-        font-family: "Poppins";
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 20px;
-        color: #666666;
-        margin: 0;
+      
+      .info-description {
+        margin-top: 0;
+        
+        p {
+          font-family: "Poppins";
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 1.6;
+          color: #000000;
+          margin-bottom: 12px;
+          text-align: justify;
+          text-justify: inter-word;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
 
