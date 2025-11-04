@@ -3,18 +3,19 @@
   gap: 40px;
   padding: 40px;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 80px; // reduced for web view to move text up
   width: 100%;
   margin: 0;
 
   // Mobile responsive layout
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 20px;
-    padding-top: 20px;
-    gap: 20px;
+    padding: 0px; // Zero padding
+    padding-top: 0px; // No top padding
+    gap: 3px; // Very minimal gap between elements
     text-align: center;
     max-width: 100%;
+    margin-top: -5px; // Negative margin to pull up even more
   }
   .left-content {
     flex: 1;
@@ -28,11 +29,13 @@
 
     .left-box-content-div {
       position: relative;
-      bottom: 80px;
+      bottom: 65px; // reduced to move text content higher up
 
       @media (max-width: 768px) {
         bottom: 0;
         position: static;
+        margin-top: 0px; // No margin on mobile
+        padding-top: 0px; // No padding
       }
       .overlap-9 {
         left: 100px;
@@ -45,6 +48,8 @@
         @media (max-width: 768px) {
           left: 0;
           margin: 0 auto;
+          margin-top: 0px; // No top margin
+          margin-bottom: 2px; // Very minimal bottom margin
           display: flex;
           justify-content: center;
         }
@@ -107,7 +112,8 @@
           font-size: 32px;
           line-height: 40px;
           text-align: center;
-          padding-top: 10px;
+          padding-top: 0px; // No padding to minimize gap
+          margin-top: 0px; // No margin
         }
 
         .text-wrapper-31 {
@@ -137,7 +143,8 @@
           height: auto;
           font-size: 14px;
           line-height: 22px;
-          margin-bottom: 20px;
+          margin-bottom: 5px; // Very minimal bottom margin
+          margin-top: 0px; // No top margin
           text-align: center;
         }
       }
@@ -174,7 +181,7 @@
         @media (max-width: 768px) {
           width: fit-content;
           margin: 0 auto;
-          margin-top: 20px;
+          margin-top: 2px; // Very minimal top margin
           padding: 16px 24px;
           font-size: 14px;
         }

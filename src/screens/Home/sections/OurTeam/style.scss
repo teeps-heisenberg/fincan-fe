@@ -175,13 +175,14 @@
         font-size: 12px;
         margin: 0;
         position: absolute; // Position opposite to heading
-        top: 100px; // lower to align with "Fincan Inc." baseline
+        top: 130px; // Aligned with "Fincan Inc." baseline (20px label + 40px line1 + 40px line2 + ~30px to Fincan Inc baseline)
         right: 0;
+        align-self: flex-end; // Align to bottom
       }
 
       // Extra small devices fine-tune
       @media (max-width: 480px) {
-        top: 108px;
+        top: 135px; // Slightly adjusted for smaller screens
       }
 
       // &:hover {

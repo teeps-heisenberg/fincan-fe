@@ -1,13 +1,13 @@
 .consultancy-wrapper {
   display: flex;
-  gap: 40px;
+  gap: 118px; // increased spacing between form and text in web view
   flex-wrap: wrap; // ensures responsiveness
   color: #222;
   font-family: sans-serif;
   background: linear-gradient(90deg, #005F77 0%, #018699 100%);
   padding: 150px 20px 20px 90px; // original spacing
   position: relative;
-  margin-top: -100px; // original overlap
+  margin-top: -140px; // original overlap
 //   width: ;
 
   // Mobile responsive
@@ -231,7 +231,8 @@ letter-spacing: 0%;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    justify-content: center;
+    align-items: flex-start; // Align form with heading at top
+    padding-top: 0; // Start from same position as heading
 
     // Mobile responsive
     @media (max-width: 768px) {

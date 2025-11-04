@@ -19,7 +19,7 @@ html {
   
   // Mobile responsive
   @media (max-width: 768px) {
-    padding-top: 60px; // Smaller header height on mobile
+    padding-top: 5px; // Very minimal gap - almost no gap
   }
 }
 
@@ -30,7 +30,9 @@ html {
     margin-top: 0; // Remove negative margin for desktop too
     border-radius: 0; // Remove rounded corners for desktop too
     background-color: transparent; // Remove white background for desktop too
-    overflow: visible; // Allow curved sections to overlap
+    overflow: visible; 
+
+    // Allow curved sections to overlap
 
     // Mobile responsive
     @media (max-width: 768px) {

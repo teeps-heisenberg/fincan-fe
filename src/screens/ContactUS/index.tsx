@@ -111,18 +111,44 @@ export default function ContactUs() {
       <section className="contact-section">
         {/* Mobile: Title at top */}
         <div className="mobile-title">
-          <h2>Contact us For the Consultancy</h2>
-          <p>Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum has been the industry's standard dummy text ever</p>
+          <h2>Contact us For Expert Financial Advisory</h2>
+          <div className="info-description">
+            <p>
+              At FinCan Solutions, every conversation begins with understanding your goals. We work with entrepreneurs, investors and business owners across Canada and internationally to build lender-ready, fundable financial outcomes.
+            </p>
+            <p>
+              We can assist you with Business Financing, Commercial Real Estate Funding, Debt & Credit Advisory, Startup Funding, and Investment Planning.
+            </p>
+            <p>
+              Submit your details below and our advisory team will respond within 24–48 hours to book your consultation.
+            </p>
+            <p>
+              Your information remains fully confidential and secure.
+            </p>
+          </div>
         </div>
 
         {/* ------- LEFT INFO (Desktop) --------- */}
         <div className="contact-info">
-          <h2 className="info-title">Get In Touch with FinCan Solutions</h2>
-          <h4 className="info-subtitle">
-            Ready to take control of your financial future?
-            <br /> We're here to help.
-          </h4>
-          {/* Address removed from desktop view */}
+          <h2 className="info-title">
+            Get In Touch
+            <br />
+            <span className="info-title-fincan">with FinCan Solutions</span>
+          </h2>
+          <div className="info-description">
+            <p>
+              At FinCan Solutions, every conversation begins with understanding your goals. We work with entrepreneurs, investors and business owners across Canada and internationally to build lender-ready, fundable financial outcomes.
+            </p>
+            <p>
+              We can assist you with Business Financing, Commercial Real Estate Funding, Debt & Credit Advisory, Startup Funding, and Investment Planning.
+            </p>
+            <p>
+              Submit your details below and our advisory team will respond within 24–48 hours to book your consultation.
+            </p>
+            <p>
+              Your information remains fully confidential and secure.
+            </p>
+          </div>
         </div>
 
         {/* ------- RIGHT FORM -------- */}

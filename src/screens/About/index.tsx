@@ -26,7 +26,7 @@ import team1 from "../../assets/team-1.jpg";
 import bullet from "../../assets/bullet.png";
 import { Group } from "../Homepage/sections/Group";
 import Footer from "../../components/Footer";
-import objects from "../../assets/objects.svg";
+import objects from "../../assets/OBJECTS.png";
 import bg from "../../assets/common/circle-bg.png";
 import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";

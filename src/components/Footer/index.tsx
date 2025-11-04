@@ -22,9 +22,9 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
       {blueSection && (
         <div className={`consultancy-wrapper ${homeTightSpacing ? 'home-tight' : ''}`}>
           <div className="consultancy-left">
-            <h2 className="title">Contact us For the <span className="blue-text">Consultancy</span></h2>
+            <h2 className="title">Contact us For <span className="blue-text">Expert Financial Advisory</span></h2>
             <p className="subtitle">
-              Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum has been the industry's standard dummy text ever
+              We help entrepreneurs become bankable — with clarity, strategy and the right funding pathways. Speak to a FinCan Specialist today and get guidance tailored to your business goals.
             </p>
 
             <div className="points-container">
@@ -32,7 +32,7 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
                 <img loading="lazy" src={time} alt="" className="point-icon" />
                 <div className="point-text">
                   <span className="primary">Open Hours:</span>
-                  <span className="secondary">9 am - 8 pm</span>
+                  <span className="secondary">9 am - 5 pm</span>
                 </div>
               </div>
 
@@ -40,15 +40,7 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
                 <img loading="lazy" src={phone} alt="" className="point-icon" />
                 <div className="point-text">
                   <span className="primary">Requesting A Call:</span>
-                  <span className="secondary">(629) 555-0129</span>
-                </div>
-              </div>
-
-              <div className="point">
-                <img loading="lazy" src={location} alt="" className="point-icon" />
-                <div className="point-text">
-                  <span className="primary">Location:</span>
-                  <span className="secondary">6391 Elgin St. Celina, Delaware 10299</span>
+                  <span className="secondary">+1-587-4389361</span>
                 </div>
               </div>
             </div>
