@@ -32,12 +32,9 @@ export const CompleteSolution = (): JSX.Element => {
           </div>
           <p className="complete-solution">
             <span className="text-wrapper-31">
-              Turning Visions into
-              <br />
+              Building Bankable{" "}
             </span>
-            {/* <span className="text-wrapper-32">Your</span>
-            <span className="text-wrapper-31">&nbsp;</span> */}
-            <span className="text-wrapper-32">Bankable Realities</span>
+            <span className="text-wrapper-32">Entrepreneurs</span>
           </p>
           <p className="text-hero">
             We craft tailored financial strategies that align your business's
