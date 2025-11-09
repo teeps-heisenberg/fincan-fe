@@ -152,6 +152,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
   }
 
   &__right {
@@ -563,37 +564,75 @@
   }
 
   .team-modal {
-    padding: 10px;
-    align-items: flex-start;
+    padding: 30px 15px;
+    align-items: center;
+    justify-content: center;
 
     &__content {
-      max-height: calc(100vh - 20px);
-      border-radius: 4px;
+      max-height: calc(100vh - 60px);
+      max-width: calc(100vw - 30px);
+      border-radius: 12px;
+      overflow: visible;
+      margin: auto;
     }
 
     &__body {
       flex-direction: column;
+      overflow: visible;
+      max-height: calc(100vh - 60px);
     }
 
     &__left {
       flex: 0 0 auto;
-      height: 300px;
+      height: 220px;
+      position: relative;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+    
+    &__image {
+      object-position: center 20%;
     }
 
     &__right {
-      padding: 25px;
+      padding: 18px;
+      overflow-y: auto;
+      max-height: calc(100vh - 260px);
+      
+      /* Custom scrollbar for mobile */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+      }
     }
 
     &__close {
-      font-size: 24px;
-      top: 10px;
-      right: 10px;
-      width: 35px;
-      height: 35px;
-      background: rgba(0, 0, 0, 0.6);
+      font-size: 30px;
+      top: 15px;
+      right: 15px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+      font-weight: bold;
+      z-index: 100;
 
       &:hover {
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
       }
     }
 
@@ -645,27 +684,56 @@
 // Small mobile devices
 @media (max-width: 480px) {
   .team-modal {
-    padding: 5px;
+    padding: 25px 10px;
+    align-items: center;
+    justify-content: center;
 
     &__content {
-      max-height: calc(100vh - 10px);
-      border-radius: 0;
+      max-height: calc(100vh - 50px);
+      max-width: calc(100vw - 20px);
+      border-radius: 10px;
+      overflow: visible;
+      margin: auto;
     }
 
     &__body {
-      max-height: calc(100vh - 10px);
+      max-height: calc(100vh - 50px);
+      overflow: visible;
     }
 
     &__left {
-      height: 250px;
+      height: 200px;
+      position: relative;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+    }
+    
+    &__image {
+      object-position: center 20%;
     }
 
     &__right {
-      padding: 18px;
+      padding: 15px;
+      overflow-y: auto;
+      max-height: calc(100vh - 230px);
+      
+      /* Custom scrollbar for mobile */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+      }
     }
 
     &__name {
-      font-size: 20px;
+      font-size: 19px;
       margin-bottom: 6px;
       font-family: "Tiro Kannada", serif;
       font-weight: 700;
@@ -716,7 +784,7 @@
 
     &__info-label {
       font-size: 13px;
-      min-width: 80px;
+      min-width: 75px;
       font-weight: 700;
       text-align: left;
     }
@@ -733,22 +801,33 @@
       margin-top: 8px;
 
       img {
-        width: 26px;
-        height: 26px;
+        width: 28px;
+        height: 28px;
       }
 
       svg {
-        width: 26px;
-        height: 26px;
+        width: 28px;
+        height: 28px;
       }
     }
 
     &__close {
-      font-size: 22px;
-      top: 8px;
-      right: 8px;
-      width: 32px;
-      height: 32px;
+      font-size: 28px;
+      top: 12px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+      font-weight: bold;
+      z-index: 100;
+
+      &:hover,
+      &:active {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(0.95);
+      }
     }
   }
 
@@ -774,12 +853,26 @@
 // Extra small mobile devices (iPhone SE, etc.)
 @media (max-width: 375px) {
   .team-modal {
+    padding: 20px 8px;
+
+    &__content {
+      border-radius: 8px;
+      max-height: calc(100vh - 40px);
+      max-width: calc(100vw - 16px);
+    }
+
     &__left {
-      height: 220px;
+      height: 180px;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    &__image {
+      object-position: center 20%;
     }
 
     &__right {
-      padding: 15px;
+      padding: 12px;
+      max-height: calc(100vh - 200px);
     }
 
     &__name {
@@ -805,15 +898,28 @@
     &__description,
     &__bio p {
       font-size: 12px;
+      line-height: 1.4;
     }
 
     &__contact-info {
       padding: 8px;
     }
 
-    &__info-label,
+    &__info-label {
+      font-size: 12px;
+      min-width: 70px;
+    }
+
     &__info-value {
       font-size: 12px;
+    }
+
+    &__close {
+      font-size: 26px;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
     }
   }
 }
