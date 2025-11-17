@@ -229,7 +229,6 @@ export default TeamMemberCard;
 // import facebook from '../../assets/aboutUs/team/fb.png'
 // import instagram from '../../assets/aboutUs/team/instagram.png'
 // import twitter from '../../assets/aboutUs/team/twitter.png'
-
 // import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 // interface TeamMemberCardProps {
