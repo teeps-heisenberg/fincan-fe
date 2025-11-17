@@ -302,31 +302,30 @@
 // Media query for laptop screens (where top cutoff occurs)
 @media (min-width: 769px) and (max-width: 1440px) {
   .team-modal {
-    align-items: flex-start;
-    padding: 15px;
+    align-items: center;
+    padding: 20px;
 
     &__content {
       margin-top: 0;
-      max-height: calc(100vh - 30px);
+      max-height: calc(100vh - 40px);
       overflow: hidden;
     }
 
     &__body {
       display: flex;
       flex-direction: row;
-      height: 100%;
-      max-height: calc(100vh - 30px);
+      max-height: calc(100vh - 40px);
     }
 
     &__left {
       flex: 0 0 320px;
-      max-height: 550px;
+      max-height: calc(100vh - 40px);
     }
 
     &__right {
       padding: 25px;
       overflow-y: auto;
-      max-height: calc(100vh - 30px);
+      max-height: calc(100vh - 40px);
     }
 
     &__name {
