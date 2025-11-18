@@ -118,13 +118,13 @@
     background-color: transparent;
     z-index: 9000;
     position: relative !important;
-    margin-top: 100px;
+    margin-top: 200px;
     .slider-heading {
       font-size: 32px;
-      font-weight: 600;
+      font-weight: 400;
       color: #000;
-      margin-bottom: 100px;
-      font-family: "Poppins", sans-serif;
+      margin-bottom: 110px;
+      font-family: "Tiro Kannada", serif;
       text-align: center;
     }
 
@@ -256,7 +256,7 @@
     }
 
     @media (max-width: 768px) {
-      margin-top: 24px;
+      margin-top: 60px;
       .slider-item {
         min-width: 160px;
         height: 100px;
@@ -316,10 +316,10 @@
 
     .card-title {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: 400;
       color: #000;
       margin-bottom: 10px;
-      font-family: "Poppins", sans-serif;
+      font-family: "Tiro Kannada", serif;
     }
 
     .card-divider {
@@ -635,10 +635,10 @@
 
         .card-title {
           font-size: 24px;
-          font-weight: 600;
+        font-weight: 400;
           color: #000;
           margin-bottom: 12px;
-          font-family: "Poppins", sans-serif;
+        font-family: "Tiro Kannada", serif;
         }
 
         .card-divider {
