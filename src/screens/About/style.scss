@@ -35,15 +35,15 @@ html {
   gap: 40px;
   background-color: #fff;
   position: relative; // allow absolute bg inside hero
-    .left-side {
-      position: relative;
-      z-index: 1;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 24px; // restore original spacing
-      padding-left: 80px;
+  .left-side {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px; // restore original spacing
+    padding-left: 80px;
 
     // removed per request - circle belongs below entire hero, not under text
 
@@ -250,7 +250,7 @@ html {
         cursor: pointer;
         transition: background 0.3s;
         margin-top: 0px; // No top margin to minimize gap
-        
+
         &:hover {
           background: #004170;
         }
@@ -438,7 +438,7 @@ html {
       background: linear-gradient(90deg, #005f77 0%, #018699 100%);
       font-family: "Plus Jakarta Sans";
       font-weight: 600;
-      font-size: 16px; // larger text
+      font-size: 16px;
       line-height: 30px;
       letter-spacing: 0%;
       color: #f9f9f9;
@@ -456,7 +456,7 @@ html {
     .img-div {
       flex: 1;
       width: 100%;
-      
+
       img {
         width: 100%;
         max-width: 100%;
