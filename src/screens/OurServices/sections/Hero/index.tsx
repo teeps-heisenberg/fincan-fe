@@ -68,6 +68,7 @@ function Hero() {
   // ];
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
+  const mobileAutoScrollTimeout = useRef<number | null>(null);
 
   // Center a specific card index within the slider viewport
   const centerToIndex = (index: number, smooth: boolean = true) => {
@@ -102,11 +103,10 @@ function Hero() {
   useEffect(() => {
     // Ensure page starts from top when component mounts
     window.scrollTo(0, 0);
-    // Additional mobile fix
     if (window.scrollY > 0) {
       window.scrollTo(0, 0);
     }
-    
+
     const fetchVisibleServices = async () => {
       setLoading(true);
       try {
@@ -125,24 +125,45 @@ function Hero() {
     };
 
     fetchVisibleServices();
-    // Center initial slide so halves show on both sides (desktop)
-    const initTimer = setTimeout(() => {
+
+    const initializeSlider = () => {
+      const isMobile = window.innerWidth <= 768;
       const middle = Math.min(
         Math.max(1, Math.floor(images.length / 2)),
         Math.max(1, images.length - 2)
       );
-      setActiveCardIndex(middle);
-      centerToIndex(middle, false); // snap to center immediately
-      // one-time auto slide to the next card for a pleasant intro
-      const autoTimer = setTimeout(() => {
-        const next = (middle + 1) % images.length;
-        setActiveCardIndex(next);
-        centerToIndex(next, true);
-      }, 1200);
-      return () => clearTimeout(autoTimer);
-    }, 0);
+      const desktopInitial = Math.max(0, middle - 1);
+      const initialIndex = isMobile ? 0 : desktopInitial;
+      setActiveCardIndex(initialIndex);
+      centerToIndex(initialIndex, false);
+      if (isMobile) {
+        if (mobileAutoScrollTimeout.current) {
+          clearTimeout(mobileAutoScrollTimeout.current);
+        }
+        mobileAutoScrollTimeout.current = window.setTimeout(() => {
+          const targetIndex = Math.min(2, Math.max(0, images.length - 1));
+          const slider = sliderRef.current;
+          const targetCard = slider?.children[targetIndex] as HTMLElement | undefined;
+          if (!slider || !targetCard) return;
+          const targetLeft =
+            targetCard.offsetLeft -
+            slider.offsetWidth / 2 +
+            targetCard.offsetWidth / 2;
+          slider.scrollTo({ left: targetLeft, behavior: "smooth" });
+          setActiveCardIndex(targetIndex);
+        }, 500);
+      }
+    };
 
-    return () => clearTimeout(initTimer);
+    initializeSlider();
+    window.addEventListener("resize", initializeSlider);
+
+    return () => {
+      if (mobileAutoScrollTimeout.current) {
+        clearTimeout(mobileAutoScrollTimeout.current);
+      }
+      window.removeEventListener("resize", initializeSlider);
+    };
   }, []);
 
   if (loading) {

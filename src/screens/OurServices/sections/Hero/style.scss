@@ -4,8 +4,8 @@
   .background-img-circle {
     position: absolute;
     z-index: 100;
-    top: 400px;
-    left: 60%;
+    top: 360px;
+    left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
     // background-image: url('../../../../assets/aboutUs/Group-bg.png');
@@ -16,6 +16,12 @@
     img {
       display: block;
       height: auto;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .background-img-circle {
+      top: 320px;
     }
   }
   .hero-container {
@@ -117,7 +123,7 @@
       font-size: 32px;
       font-weight: 600;
       color: #000;
-      margin-bottom: 30px;
+      margin-bottom: 100px;
       font-family: "Poppins", sans-serif;
       text-align: center;
     }
@@ -174,6 +180,18 @@
         overflow: hidden;
         cursor: pointer;
         transition: height 0.3s ease;
+
+        &.active {
+          height: 290px;
+
+          img {
+            transform: scale(1.05);
+          }
+
+          .overlay-consultant {
+            opacity: 1;
+          }
+        }
 
         img {
           width: 100%;
