@@ -1,37 +1,21 @@
-/* Ensure OurServices page starts from top */
-body {
-  scroll-behavior: auto !important;
-}
-
 .main-hero {
-  position: relative; // Add relative positioning to contain background
-  overflow-x: hidden; // Prevent horizontal overflow but allow vertical for full image
-  overflow-y: visible; // Allow vertical overflow to show full image
-  // Full-hero circular background - removed as we use separate element
-  // background-image: url('../../../../assets/aboutUs/Group-bg.png');
-  // background-repeat: no-repeat;
-  // background-position: center center;
-  // background-size: cover;
-  
+  position: relative;
+  overflow: hidden;
   .background-img-circle {
     position: absolute;
-    z-index: 0; // Background layer - below all frontend elements
-    top: 130px; // Moved up to be visible in hero section
-    left: 50%;
-    transform: translateX(-50%); // Center horizontally
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    z-index: 100;
+    top: 400px;
+    left: 60%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    // background-image: url('../../../../assets/aboutUs/Group-bg.png');
+    // background-position: center 50px;
+    // background-repeat: no-repeat;
+    // background-size: contain;
+
     img {
       display: block;
-      width: 120%; // Increased width to make it more visible
-      max-width: none; // Remove max-width constraint for full stretch
       height: auto;
-      object-fit: contain; // Changed from cover to contain to show full circle
-      opacity: 1.0; // Full opacity
-      filter: brightness(1.1); // Slightly brighten the image
     }
   }
   .hero-container {
@@ -39,24 +23,23 @@ body {
     width: 100%;
     height: 100vh;
     gap: 40px;
-    overflow: visible; // Changed from hidden to visible to show full image
-    position: relative;
-    z-index: 1; // Above background circle
-    
     .hero-left {
       flex: 0.4;
       z-index: 100;
       position: relative;
-      top: 110px; // nudged a bit further down
-      left: -50px; // subtle left shift
-      display: flex;
-      align-items: flex-start;
-      min-height: 0; // Allow flex child to shrink
+      top: 110px;
+      left: -40px;
+      @media (max-width: 1024px) {
+        left: -20px;
+      }
+      @media (max-width: 768px) {
+        left: 0;
+      }
       .hero-img {
         width: 100%;
-        height: auto; // Changed from 100% to auto to show full image
-        max-height: calc(100vh - 110px); // Ensure it fits within viewport
+        height: 100%;
         object-fit: contain;
+        object-position: left center;
       }
     }
 
@@ -64,19 +47,17 @@ body {
       flex: 0.6;
       position: relative;
       display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
+      align-items: flex-end; // align to bottom
+      justify-content: flex-end; // align to right
       overflow: hidden;
-        z-index: 1; // keep above any negative z-index backgrounds
 
       .hero-overlay {
         opacity: 1;
-        // Semi-transparent gradient only; circles come from .main-hero and cover entire hero
-        // Reduced opacity to make background circle more visible
-        background: linear-gradient(90deg, rgba(0,95,119,0.85) 0%, rgba(1,134,153,0.80) 100%);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background: linear-gradient(
+          90deg,
+          #005f77 0%,
+          #018699 100%
+        ); // blue with opacity
         width: 100%;
         height: 100%;
         border-bottom-left-radius: 262px;
@@ -86,8 +67,6 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-left: 0; // center the content horizontally
-        padding-top: 0; // center the content vertically
 
         .hero-title {
           margin-bottom: 10px;
@@ -109,137 +88,43 @@ body {
           text-transform: capitalize;
           width: 60%;
         }
-
-        .hero-subtext-mobile {
-          display: none;
-        }
-
-        .hero-subtext-desktop {
-          display: block;
-        }
       }
     }
 
     @media (max-width: 768px) {
       flex-direction: column;
-      height: 400px;
-      // On mobile, keep the background centered
-      :host, .main-hero {
-        background-position: center center;
-        background-size: 120% auto;
-      }
-      min-height: 400px;
-      gap: 0;
-      width: 100%;
-      max-width: 100%;
-      overflow: visible;
-      padding: 0;
-      margin: 0;
-
-      .hero-left {
-        display: none !important;
-        height: 0;
-        padding: 0;
-        margin: 0;
-      }
 
       .hero-right {
-        flex: 1;
-        height: 100%;
-        width: 100%;
-        max-width: 100%;
-        overflow: visible;
-        padding: 0;
-        margin: 0;
+        align-items: center;
 
         .hero-overlay {
           width: 100%;
-          height: 100%;
-          border-bottom-left-radius: 80px;
-          border-bottom-right-radius: 0;
-          padding: 60px 20px;
-          justify-content: center;
-          overflow: visible;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-
-          .hero-title {
-            margin: 0 0 16px 0;
-            font-family: "Tiro Kannada";
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 40px;
-            letter-spacing: 0%;
-            text-align: center;
-            color: #ffffff;
-            display: block;
-            visibility: visible;
-          }
-
-          .hero-subtext {
-            display: block;
-            visibility: visible;
-            font-family: "Poppins";
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 22px;
-            letter-spacing: 0;
-            text-align: center;
-            color: #ffffff;
-            margin: 0;
-            padding: 0 10px;
-            max-width: 90%;
-          }
-
-          .hero-subtext-mobile {
-            display: block !important;
-          }
-
-          .hero-subtext-desktop {
-            display: none !important;
-          }
+          height: 50%;
+          border-bottom-left-radius: 40px;
+          text-align: center;
+          padding: 20px;
         }
       }
     }
   }
-
   .consultant-slider-container {
-    padding: 60px 0; // Keep original mobile-first padding
-    margin-top: 80px; // Increased gap between hero section and this section
+    padding: 60px 40px;
     background-color: transparent;
-    z-index: 1;
+    z-index: 9000;
     position: relative !important;
-    width: 100%; // Full width stretch
-    
-    // Desktop-specific padding to match card-column
-    @media (min-width: 769px) {
-      padding: 40px 120px !important;
-      margin-top: 120px; // Even more gap on desktop
-    }
-
+    margin-top: 100px;
     .slider-heading {
-      font-size: 42px;
-      font-weight: 400;
+      font-size: 32px;
+      font-weight: 600;
       color: #000;
       margin-bottom: 30px;
-      font-family: "Tiro Kannada", serif; // requested font
+      font-family: "Poppins", sans-serif;
       text-align: center;
     }
 
     .slider-wrapper {
       position: relative;
-      height: 290px;
-      width: 100%;
-      max-width: 1400px; // widen viewport so side cards sit closer to page edges
-      margin: 0 auto; // center viewport
-      padding: 0;
-      overflow: hidden; // clip edges for half-cards
-      
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 290px; // Match the height when slider-item is hovered
 
       .arrow {
         position: absolute;
@@ -260,11 +145,11 @@ body {
         }
 
         &.left {
-          left: 10px; // Move arrows inside container
+          left: -20px;
         }
 
         &.right {
-          right: 10px; // Move arrows inside container
+          right: -20px;
         }
       }
 
@@ -272,12 +157,9 @@ body {
         display: flex;
         overflow-x: auto;
         scroll-behavior: smooth;
-        gap: 30px;
-        padding: 0 120px; // reduce side padding so half-cards sit further toward edges
+        gap: 20px;
         padding-bottom: 10px;
         height: 100%;
-        justify-content: flex-start;
-        scroll-snap-type: x mandatory;
         &::-webkit-scrollbar {
           display: none;
         }
@@ -285,16 +167,13 @@ body {
 
       .slider-item {
         position: relative;
-        width: 260px; // card width
-        flex: 0 0 260px; // fixed card width
+        width: 274px;
         height: 190px;
         flex-shrink: 0;
         border-radius: 16px;
         overflow: hidden;
         cursor: pointer;
         transition: height 0.3s ease;
-        margin: 0 8px;
-        scroll-snap-align: center; // snap to center
 
         img {
           width: 100%;
@@ -314,37 +193,38 @@ body {
           color: #fff;
           opacity: 0;
           display: flex;
-          justify-content: flex-end; // align content to bottom
-          align-items: flex-start;   // start horizontally (left)
+          justify-content: end;
+          align-items: center;
           border-radius: 16px;
           transition: opacity 0.3s ease;
           z-index: 2;
           font-size: 18px;
           font-family: "Poppins", sans-serif;
-          text-align: left;
-          padding: 20px;
+          text-align: center;
+          padding: 60px;
+          padding-bottom: 60px;
           flex-direction: column;
 
           .text-slider-detail {
-            font-family: "Tiro Kannada", serif;
-            font-weight: 400;
+            font-family: "Poppins";
+            font-weight: 600;
             font-size: 20px;
-            line-height: 120%;
+            line-height: 100%;
             letter-spacing: 0%;
-            text-align: left;
+            text-align: start;
           }
           .line-slider {
             margin-top: 10px;
             height: 4px;
-            width: 60px;
+            width: 110%;
+            // color: #f9f9f9;
             background-color: #5aafff;
           }
         }
 
-        /* ACTIVE OR HOVER EFFECT FOR DESKTOP */
-        &.active,
         &:hover {
-          height: 290px;
+          height: 290px; //height adjust from hereeee
+          // width: 235px;
 
           img {
             transform: scale(1.05);
@@ -354,116 +234,18 @@ body {
             opacity: 1;
           }
         }
-
-        /* Ensure inactive items are slightly dimmed */
-        &:not(.active):not(:hover) .overlay-consultant {
-          opacity: 0;
-        }
       }
     }
 
     @media (max-width: 768px) {
-      padding: 40px 16px; // Keep mobile padding consistent
-
-      .slider-heading {
-        font-size: 28px;
-        margin-bottom: 20px;
-        font-family: "Tiro Kannada", serif;
-        font-weight: 400;
+      margin-top: 24px;
+      .slider-item {
+        min-width: 160px;
+        height: 100px;
       }
 
-      .slider-wrapper {
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-
-        .slider {
-          display: flex;
-          overflow-x: auto;
-          scroll-behavior: smooth;
-          gap: 15px;
-          padding: 30px 20px;
-          height: auto;
-          width: 100%;
-          justify-content: flex-start;
-          scroll-snap-type: x mandatory;
-          
-          &::-webkit-scrollbar {
-            display: none;
-          }
-        }
-
-        .slider-item {
-          width: 180px;
-          height: 180px;
-          border-radius: 18px;
-          flex-shrink: 0;
-          scroll-snap-align: center;
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-          cursor: pointer;
-
-          img {
-            border-radius: 18px;
-          }
-
-          .overlay-consultant {
-            padding: 16px 12px;
-            border-radius: 18px;
-            opacity: 0.7;
-            justify-content: flex-end;
-            align-items: flex-start;
-            .text-slider-detail {
-              font-family: "Poppins";
-              font-weight: 600;
-              font-size: 14px;
-              line-height: 20px;
-              letter-spacing: 0%;
-              text-align: left;
-            }
-
-            .line-slider {
-              margin-top: 6px;
-              height: 2px;
-              width: 50px;
-              background-color: #5aafff;
-              margin-left: 0;
-              margin-right: 0;
-            }
-          }
-
-          /* ACTIVE CARD = BIG */
-          &.active {
-            width: 260px;
-            height: 260px;
-            z-index: 10;
-
-            .overlay-consultant {
-              padding: 35px 20px;
-              opacity: 1;
-
-              .text-slider-detail {
-                font-size: 18px;
-                line-height: 26px;
-              }
-
-              .line-slider {
-                margin-top: 10px;
-                height: 3px;
-                width: 80%;
-              }
-            }
-          }
-
-          &:hover {
-            transform: scale(1.02);
-          }
-        }
-
-        .arrow {
-          display: none;
-        }
+      .arrow {
+        display: none;
       }
     }
   }
@@ -475,18 +257,14 @@ body {
   flex-direction: column;
   gap: 60px;
   padding: 40px 120px;
-  background-image: none; // Remove background image from whole section
+  background-image: url("../../../../assets/aboutUs/group2-bg.png");
   background-repeat: no-repeat;
   background-position: center 500px;
+  // width: 100%;
+  // min-height: 100vh;
   background-size: contain;
   position: relative;
-  z-index: 1; // Lower z-index
-
-  @media (max-width: 768px) {
-    gap: 40px;
-    padding: 30px 16px;
-    background-position: center 800px;
-  }
+  z-index: 100;
 }
 
 .card-wrapper {
@@ -498,10 +276,6 @@ body {
 
   &.align-right {
     justify-content: flex-end;
-  }
-
-  @media (max-width: 768px) {
-    justify-content: center !important;
   }
 }
 
@@ -524,10 +298,10 @@ body {
 
     .card-title {
       font-size: 32px;
-      font-weight: 400;
+      font-weight: bold;
       color: #000;
       margin-bottom: 10px;
-      font-family: "Tiro Kannada", serif;
+      font-family: "Poppins", sans-serif;
     }
 
     .card-divider {
@@ -580,76 +354,330 @@ body {
       border-radius: 28.4px;
     }
   }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .custom-card {
     flex-direction: column;
     height: auto;
-    gap: 20px;
-    max-width: 100%;
-    border-radius: 16px;
 
-    .card-left {
+    .card-left,
+    .card-right {
       max-width: 100%;
       text-align: center;
+    }
 
-      .card-title {
-        font-size: 24px;
-        font-weight: 600;
-        color: #000;
-        margin-bottom: 12px;
-        font-family: "Poppins", sans-serif;
-      }
+    .card-right img {
+      width: 100%;
+      height: auto;
+      max-height: 433px;
+    }
+  }
+}
 
-      .card-divider {
-        width: 60px;
-        height: 3px;
-        background-color: #02879a;
-        margin: 0 auto 16px;
-      }
+/* Mobile-specific overrides based on reference */
+@media (max-width: 768px) {
+  body {
+    scroll-behavior: auto !important;
+  }
 
-      .card-description {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.5;
-        margin-bottom: 16px;
-        font-family: "Poppins", sans-serif;
-      }
+  .main-hero {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
 
-      .card-button {
-        background-color: #02879a;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 14px;
-        font-family: "Poppins", sans-serif;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: auto;
+    .background-img-circle {
+      z-index: 0;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 120%;
+        max-width: none;
         height: auto;
-        border-radius: 50px;
-        gap: 8px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        object-fit: contain;
+        opacity: 1;
+        filter: brightness(1.1);
+      }
+    }
 
-        &:hover {
-          background-color: #000;
+    .hero-container {
+      flex-direction: column;
+      height: 400px;
+      min-height: 400px;
+      gap: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow: visible;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+
+      .hero-left {
+        display: none !important;
+        height: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      .hero-right {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+        padding: 0;
+        margin: 0;
+
+        .hero-overlay {
+          background: linear-gradient(
+            90deg,
+            rgba(0, 95, 119, 0.85) 0%,
+            rgba(1, 134, 153, 0.8) 100%
+          );
+          width: 100%;
+          height: 100%;
+          border-bottom-left-radius: 80px;
+          border-bottom-right-radius: 0;
+          padding: 60px 20px;
+          justify-content: center;
+          overflow: visible;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .hero-title {
+            margin: 0 0 16px 0;
+            font-size: 32px;
+            line-height: 40px;
+            color: #ffffff;
+          }
+
+          .hero-subtext {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0;
+            text-align: center;
+            color: #ffffff;
+            margin: 0;
+            padding: 0 10px;
+            max-width: 90%;
+          }
+
+          .hero-subtext-mobile {
+            display: block !important;
+          }
+
+          .hero-subtext-desktop {
+            display: none !important;
+          }
         }
       }
     }
 
-    .card-right {
-      flex-shrink: 0;
+    .consultant-slider-container {
+      padding: 40px 16px;
+      margin-top: 80px;
+      z-index: 1;
       width: 100%;
 
-      img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 16px;
-        max-height: 250px;
+      .slider-heading {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-family: "Tiro Kannada", serif;
+        font-weight: 400;
       }
+
+      .slider-wrapper {
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 0;
+
+        .slider {
+          display: flex;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          gap: 15px;
+          padding: 30px 20px;
+          height: auto;
+          width: 100%;
+          justify-content: flex-start;
+          scroll-snap-type: x mandatory;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        .slider-item {
+          width: 180px;
+          height: 180px;
+          border-radius: 18px;
+          flex-shrink: 0;
+          scroll-snap-align: center;
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          cursor: pointer;
+
+          img {
+            border-radius: 18px;
+          }
+
+          .overlay-consultant {
+            padding: 16px 12px;
+            border-radius: 18px;
+            opacity: 0.7;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+            .text-slider-detail {
+              font-family: "Poppins";
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 20px;
+              letter-spacing: 0%;
+              text-align: left;
+            }
+
+            .line-slider {
+              margin-top: 6px;
+              height: 2px;
+              width: 50px;
+              background-color: #5aafff;
+              margin-left: 0;
+              margin-right: 0;
+            }
+          }
+
+          &.active {
+            width: 260px;
+            height: 260px;
+            z-index: 10;
+
+            .overlay-consultant {
+              padding: 35px 20px;
+              opacity: 1;
+
+              .text-slider-detail {
+                font-size: 18px;
+                line-height: 26px;
+              }
+
+              .line-slider {
+                margin-top: 10px;
+                height: 3px;
+                width: 80%;
+              }
+            }
+          }
+
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+
+        .arrow {
+          display: none;
+        }
+      }
+    }
+
+    .card-column {
+      gap: 40px;
+      padding: 30px 16px;
+      background-image: none;
+      background-position: center 800px;
+      z-index: 1;
+    }
+
+    .card-wrapper {
+      justify-content: center !important;
+    }
+
+    .custom-card {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+      max-width: 100%;
+      border-radius: 16px;
+
+      .card-left {
+        max-width: 100%;
+        text-align: center;
+
+        .card-title {
+          font-size: 24px;
+          font-weight: 600;
+          color: #000;
+          margin-bottom: 12px;
+          font-family: "Poppins", sans-serif;
+        }
+
+        .card-divider {
+          width: 60px;
+          height: 3px;
+          background-color: #02879a;
+          margin: 0 auto 16px;
+        }
+
+        .card-description {
+          font-size: 14px;
+          color: #666;
+          line-height: 1.5;
+          margin-bottom: 16px;
+          font-family: "Poppins", sans-serif;
+        }
+
+        .card-button {
+          background-color: #02879a;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-size: 14px;
+          font-family: "Poppins", sans-serif;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          width: auto;
+          height: auto;
+          border-radius: 50px;
+          gap: 8px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: #000;
+          }
+        }
+      }
+
+      .card-right {
+        flex-shrink: 0;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+          border-radius: 16px;
+          max-height: 250px;
+        }
+      }
+    }
+
+    .loader-overlay {
+      z-index: 1;
     }
   }
 }
@@ -663,7 +691,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 9999;
 }
 
 .no-results {
@@ -677,3 +705,4 @@ body {
   text-align: center;
   padding: 2rem;
 }
+
