@@ -349,31 +349,32 @@
 }
 
 // Tablet landscape and small laptops
-@media (min-width: 769px) and (max-width: 1024px) {
-  .team-modal {
-    &__left {
-      flex: 0 0 300px;
-      max-height: 520px;
-    }
+// Commented out to maintain consistent modal layout across all screen sizes
+// @media (min-width: 769px) and (max-width: 1024px) {
+//   .team-modal {
+//     &__left {
+//       flex: 0 0 300px;
+//       max-height: 520px;
+//     }
 
-    &__right {
-      padding: 22px;
-    }
+//     &__right {
+//       padding: 22px;
+//     }
 
-    &__contact-info {
-      padding: 12px;
-      margin-bottom: 15px;
-    }
+//     &__contact-info {
+//       padding: 12px;
+//       margin-bottom: 15px;
+//     }
 
-    &__info-item {
-      flex-direction: row;
-    }
+//     &__info-item {
+//       flex-direction: row;
+//     }
 
-    &__info-label {
-      min-width: 85px;
-    }
-  }
-}
+//     &__info-label {
+//       min-width: 85px;
+//     }
+//   }
+// }
 
 // Tablets (portrait and landscape)
 @media (max-width: 1024px) and (min-width: 769px) {
