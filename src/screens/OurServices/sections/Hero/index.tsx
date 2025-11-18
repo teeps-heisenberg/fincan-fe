@@ -205,9 +205,7 @@ function Hero() {
               Explore Our Expertise in Personal Financial Planning, Business
               Financing, Retirement, Debt Management, and More.
             </p>
-            <p className="hero-subtext hero-subtext-mobile">
-              We Provide Perfect IT Solutions For Your Business
-            </p>
+           
           </div>
         </div>
       </div>
