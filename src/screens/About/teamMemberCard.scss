@@ -303,50 +303,51 @@
 }
 
 // Media query for smaller laptops (common 1366x768 screens)
-@media (min-width: 769px) and (max-height: 800px) {
-  .team-modal {
-    align-items: flex-start;
-    padding: 10px;
+// Commented out to maintain consistent modal layout across all screen sizes
+// @media (min-width: 769px) and (max-height: 800px) {
+//   .team-modal {
+//     align-items: flex-start;
+//     padding: 10px;
 
-    &__content {
-      max-height: calc(100vh - 20px);
-    }
+//     &__content {
+//       max-height: calc(100vh - 20px);
+//     }
 
-    &__body {
-      max-height: calc(100vh - 20px);
-    }
+//     &__body {
+//       max-height: calc(100vh - 20px);
+//     }
 
-    &__left {
-      flex: 0 0 280px;
-      max-height: 500px;
-    }
+//     &__left {
+//       flex: 0 0 280px;
+//       max-height: 500px;
+//     }
 
-    &__right {
-      padding: 20px;
-      max-height: calc(100vh - 20px);
-    }
+//     &__right {
+//       padding: 20px;
+//       max-height: calc(100vh - 20px);
+//     }
 
-    &__name {
-      font-size: 22px;
-      font-family: "Tiro Kannada", serif;
-      font-weight: 700;
-    }
+//     &__name {
+//       font-size: 22px;
+//       font-family: "Tiro Kannada", serif;
+//       font-weight: 700;
+//     }
 
-    &__role {
-      font-size: 15px;
-      font-family: "Tiro Kannada", serif;
-      font-weight: 700;
-    }
+//     &__role {
+//       font-size: 15px;
+//       font-family: "Tiro Kannada", serif;
+//       font-weight: 700;
+//     }
 
-    &__bio {
-      h4 {
-        font-family: "Tiro Kannada", serif;
-        font-weight: 700;
-        color: #018699;
-      }
-    }
-  }
-}
+//     &__bio {
+//       h4 {
+//         font-family: "Tiro Kannada", serif;
+//         font-weight: 700;
+//         color: #018699;
+//       }
+//     }
+//   }
+// }
 
 // Tablet landscape and small laptops
 // Commented out to maintain consistent modal layout across all screen sizes
