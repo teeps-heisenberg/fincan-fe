@@ -38,13 +38,13 @@ function ProvidingRights() {
             <div className="right-side-grid">
               <div className="right-side-content-500">
                 <span className="number">
-                  <AnimatedCounter to={500} suffix="+" />
+                  <AnimatedCounter to={200} suffix="+" />
                 </span>
                 <span className="label">Satisfied Customers</span>
               </div>
               <div className="right-side-content-500">
                 <span className="number">
-                  <AnimatedCounter to={300} suffix="+" />
+                  <AnimatedCounter to={50} suffix="+" />
                 </span>
                 <span className="label">Projects Completed</span>
               </div>

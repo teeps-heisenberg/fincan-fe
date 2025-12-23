@@ -3,12 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./style.scss";
 import Header from "../../components/Header";
 import blog1 from "../../assets/blog/blog-1.jpg";
-import * as FaIcons from "react-icons/fa";
 import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";
-import case1 from "../../assets/caseStudy/case1.jpg";
-import case2 from "../../assets/caseStudy/case2.jpg";
-import case3 from "../../assets/caseStudy/case3.jpg";
 import Footer from "../../components/Footer";
 import { getCloudinaryUrl } from "../../utils/getCloudinaryUrl";
 import bg from "../../assets/common/circle-bg.png";
@@ -21,78 +17,28 @@ interface CaseStudy {
 
 function CaseStudy() {
   const [posts, setPosts] = useState([]);
-  const [popularCaseStudies, setPopularCaseStudies] = useState<CaseStudy[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [search, setSearch] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTag, setSelectedTag] = useState("");
   const navigate = useNavigate();
-  const sidebarCards = [
-    {
-      id: 1,
-      img: case1,
-      title: "Market Outlook 2025",
-      date: "01 Jun 2025",
-    },
-    {
-      id: 2,
-      img: case2,
-      title: "Tax Tips for Freelancers",
-      date: "28 May 2025",
-    },
-    {
-      id: 3,
-      img: case3,
-      title: "Best Budgeting Apps",
-      date: "21 May 2025",
-    },
-  ];
-
-  const tags = [
-    "Finance",
-    "Investment",
-    "Tax",
-    "Retirement",
-    "Budget",
-    "Crypto",
-  ];
-
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-  const fetchCaseStudies = async (page = 1, query = "") => {
+  const fetchCaseStudies = async (page = 1) => {
     setLoading(true);
     try {
-      const [visibleRes, popularRes] = await Promise.all([
-        fetch(
-          `${baseUrl}/case-studies?page=${page}&limit=6&title=${encodeURIComponent(
-            query
-          )}`
-        ),
-        fetch(`${baseUrl}/case-studies/popular`),
-      ]);
+      const visibleRes = await fetch(
+        `${baseUrl}/case-studies?page=${page}&limit=6`
+      );
 
       const visibleData = await visibleRes.json();
-      const popularData = await popularRes.json();
 
       if (!visibleRes.ok) {
         toast.error(visibleData.message || "Failed to fetch case studies");
         throw new Error(visibleData.message || "Failed to fetch case studies");
       }
 
-      if (!popularRes.ok) {
-        toast.error(
-          popularData.message || "Failed to fetch popular case studies"
-        );
-        throw new Error(
-          popularData.message || "Failed to fetch popular case studies"
-        );
-      }
-
       setPosts(visibleData.data || []);
       setTotalPages(visibleData.pages || 1);
-      setPopularCaseStudies(popularData || []);
     } catch (err) {
       console.error("Error loading case studies:", err);
       // optionally: show toast here
@@ -102,34 +48,12 @@ function CaseStudy() {
   };
 
   useEffect(() => {
-    fetchCaseStudies(page, searchQuery);
-  }, [page, searchQuery]);
+    fetchCaseStudies(page);
+  }, [page]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage > 0 && newPage <= totalPages) {
       setPage(newPage);
-    }
-  };
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
-  const handleSearchSubmit = () => {
-    setSelectedTag("");
-    setPage(1); // Reset to first page on new search
-    setSearchQuery(search);
-  };
-
-  const handleTagClick = (tag: string) => {
-    if (tag === selectedTag) {
-      // Unselect tag if already selected
-      setSelectedTag("");
-      setSearchQuery(""); // Reset filter
-    } else {
-      setSelectedTag(tag);
-      setSearch(""); // Clear input
-      setSearchQuery(tag); // Apply tag as search
-      setPage(1);
     }
   };
 
@@ -247,70 +171,7 @@ function CaseStudy() {
               )}
             </div>
 
-            {/* ---------- RIGHT SIDEBAR ---------- */}
-            <aside className="right-col">
-              {/* Search box */}
-              <div className="search-box">
-                <label className="search-label">Search Here</label>
-                <div className="search-input-wrapper">
-                  <input
-                    type="text"
-                    placeholder="Search by title…"
-                    value={search}
-                    onChange={handleSearchChange}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") handleSearchSubmit();
-                    }}
-                  />
-                  <span className="search-icon">&#128269;</span>{" "}
-                  {/* Unicode for magnifying glass */}
-                </div>
-              </div>
-
-              {/* small cards */}
-              <div className="section">
-                <div className="section-label">Popular Case Study</div>
-                <div className="sidebar-cards">
-                  {popularCaseStudies.map((c) => (
-                    <div
-                      className="sidebar-card"
-                      key={c._id}
-                      onClick={() => navigate(`/casestudydetail/${c._id}`)}
-                    >
-                      <img loading="lazy" src={c.masterImage} alt={c.title} />
-                      <div className="side-text">
-                        <span className="side-date">
-                          {" "}
-                          <span className="calendar-icon">📅</span>
-                          {new Date(c.createdAt).toLocaleDateString("en-GB", {
-                            day: "2-digit",
-                            month: "long",
-                            year: "numeric",
-                          })}
-                        </span>
-                        <span className="side-title">{c.title}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* tags */}
-              <div className="section">
-                <div className="section-label">Popular Tags</div>
-                <ul className="tag-list">
-                  {tags.map((t) => (
-                    <li
-                      key={t}
-                      className={t === selectedTag ? "selected-tag" : ""}
-                      onClick={() => handleTagClick(t)}
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
+            {/* Right sidebar (search, popular case study, tags) removed as requested */}
           </div>
         </div>
 

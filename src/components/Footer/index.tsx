@@ -80,9 +80,7 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
             <div className="footer-logo">
               <img loading="lazy" src={logo} alt="FinCan Logo" className="logo" />
             </div>
-            <div className="footer-description">
-              Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley
-            </div>
+           
           </div>
 
           <div className="footer-section second">
@@ -110,8 +108,13 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
             <img loading="lazy" src={facebookIcon} alt="Facebook" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img loading="lazy" src={twitterIcon} alt="Twitter" />
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img
+              loading="lazy"
+              src={twitterIcon}
+              alt="Twitter"
+              style={{ width: 36, height: 36 }}
+            />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
             <img loading="lazy" src={instagramIcon} alt="Instagram" />

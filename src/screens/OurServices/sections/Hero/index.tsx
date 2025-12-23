@@ -1,21 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
 import heroImage from "../../../../assets/aboutUs/service-header-left2.png"; // replace with correct path
-import img1 from "../../../../assets/aboutUs/img1.png";
-import img2 from "../../../../assets/aboutUs/img2.jpg";
-import img3 from "../../../../assets/aboutUs/img3.jpg";
-import img4 from "../../../../assets/aboutUs/img1.png";
-import img5 from "../../../../assets/aboutUs/img2.jpg";
-import img6 from "../../../../assets/aboutUs/img3.jpg";
 import bgGroup from "../../../../assets/aboutUs/Group-bg.png";
 import { toast } from "react-toastify";
 import { Oval } from "react-loader-spinner";
-interface CardData {
-  title: string;
-  description: string;
-  image: string;
-}
 
 interface ServiceCard {
   _id?: string;
@@ -24,77 +13,6 @@ interface ServiceCard {
   masterImage?: string;
 }
 function Hero() {
-  const images = [
-    { src: img1, detail: "Personal Financial Planning" },
-    { src: img2, detail: "Business Financing" },
-    { src: img3, detail: "Credit & Debt Advisory" },
-    { src: img4, detail: "Startup Funding Advisory" },
-    { src: img5, detail: "Estate Planning" },
-    { src: img6, detail: "Investment Advice" },
-    // Extra card to ensure side halves are visible on wide screens
-    { src: img1, detail: "Corporate Finance" },
-  ];
-  // const cards: CardData[] = [
-  //   {
-  //     title: "Financial Advisory",
-  //     description:
-  //       "Our IT experts are delivering a range of IT services to our customers and alleviating technology challenges regarding core IT infrastructure. We help you establish a reliable IT infrastructure.",
-  //     image: img1,
-  //   },
-  //   {
-  //     title: "Insurance Services",
-  //     description:
-  //       "Our IT experts are delivering a range of IT services to our customers and alleviating technology challenges regarding core IT infrastructure. We help you establish a reliable IT infrastructure.",
-  //     image: img2,
-  //   },
-  //   {
-  //     title: "Management Consultancy",
-  //     description:
-  //       "Our IT experts are delivering a range of IT services to our customers and alleviating technology challenges regarding core IT infrastructure. We help you establish a reliable IT infrastructure.",
-  //     image: img3,
-  //   },
-  //   {
-  //     title: "Retirement Planning",
-  //     description:
-  //       "Our IT experts are delivering a range of IT services to our customers and alleviating technology challenges regarding core IT infrastructure. We help you establish a reliable IT infrastructure.",
-  //     image: img4,
-  //   },
-  //   {
-  //     title: "Bussiness services",
-  //     description:
-  //       "Our IT experts are delivering a range of IT services to our customers and alleviating technology challenges regarding core IT infrastructure. We help you establish a reliable IT infrastructure.",
-  //     image: img3,
-  //   },
-  // ];
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [activeCardIndex, setActiveCardIndex] = useState<number>(0);
-  const mobileAutoScrollTimeout = useRef<number | null>(null);
-
-  // Center a specific card index within the slider viewport
-  const centerToIndex = (index: number, smooth: boolean = true) => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    const card = slider.children[index] as HTMLElement | undefined;
-    if (!card) return;
-    const cardLeft = card.offsetLeft;
-    const cardWidth = card.offsetWidth;
-    const containerWidth = slider.offsetWidth;
-    const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
-    slider.scrollTo({ left: scrollPosition, behavior: smooth ? 'smooth' : 'auto' as ScrollBehavior });
-  };
-
-  const scroll = (direction: "left" | "right") => {
-    const delta = direction === "left" ? -1 : 1;
-    const total = images.length;
-    const nextIndex = (activeCardIndex + delta + total) % total;
-    setActiveCardIndex(nextIndex);
-    centerToIndex(nextIndex, true);
-  };
-
-  const handleCardClick = (index: number) => {
-    setActiveCardIndex(index);
-    centerToIndex(index);
-  };
   const [cards, setCards] = useState<ServiceCard[]>([]);
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
@@ -125,45 +43,6 @@ function Hero() {
     };
 
     fetchVisibleServices();
-
-    const initializeSlider = () => {
-      const isMobile = window.innerWidth <= 768;
-      const middle = Math.min(
-        Math.max(1, Math.floor(images.length / 2)),
-        Math.max(1, images.length - 2)
-      );
-      const desktopInitial = Math.max(0, middle - 1);
-      const initialIndex = isMobile ? 0 : desktopInitial;
-      setActiveCardIndex(initialIndex);
-      centerToIndex(initialIndex, false);
-      if (isMobile) {
-        if (mobileAutoScrollTimeout.current) {
-          clearTimeout(mobileAutoScrollTimeout.current);
-        }
-        mobileAutoScrollTimeout.current = window.setTimeout(() => {
-          const targetIndex = Math.min(2, Math.max(0, images.length - 1));
-          const slider = sliderRef.current;
-          const targetCard = slider?.children[targetIndex] as HTMLElement | undefined;
-          if (!slider || !targetCard) return;
-          const targetLeft =
-            targetCard.offsetLeft -
-            slider.offsetWidth / 2 +
-            targetCard.offsetWidth / 2;
-          slider.scrollTo({ left: targetLeft, behavior: "smooth" });
-          setActiveCardIndex(targetIndex);
-        }, 500);
-      }
-    };
-
-    initializeSlider();
-    window.addEventListener("resize", initializeSlider);
-
-    return () => {
-      if (mobileAutoScrollTimeout.current) {
-        clearTimeout(mobileAutoScrollTimeout.current);
-      }
-      window.removeEventListener("resize", initializeSlider);
-    };
   }, []);
 
   if (loading) {
@@ -211,37 +90,6 @@ function Hero() {
       </div>
       <div className="consultant-slider-container">
         <h2 className="slider-heading">Best Financial Consultant Services</h2>
-
-        <div className="slider-wrapper">
-          <button className="arrow left" onClick={() => scroll("left")}>
-            &#10094;
-          </button>
-
-          <div className="slider" ref={sliderRef}>
-            {images.map((img, idx) => (
-              <div 
-                className={`slider-item ${idx === activeCardIndex ? 'active' : ''}`} 
-                key={idx}
-                onClick={() => handleCardClick(idx)}
-              >
-                <img
-                  loading="lazy"
-                  className="slider-img"
-                  src={img.src}
-                  alt={`slide-${idx}`}
-                />
-                <div className="overlay-consultant">
-                  <p className="text-slider-detail">{img.detail}</p>
-                  <div className="line-slider" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <button className="arrow right" onClick={() => scroll("right")}>
-            &#10095;
-          </button>
-        </div>
       </div>
 
       {/* //card column component  */}
