@@ -106,18 +106,18 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
 
         <div className="social-icons">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img loading="lazy" src={facebookIcon} alt="Facebook" />
+            <img loading="lazy" src={facebookIcon} alt="Facebook" style={{ width: 36, height: 36 }} />
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
             <img
               loading="lazy"
               src={twitterIcon}
               alt="Twitter"
-              style={{ width: 36, height: 36 }}
+              style={{ width: 32, height: 32 }}
             />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img loading="lazy" src={instagramIcon} alt="Instagram" />
+            <img loading="lazy" src={instagramIcon} alt="Instagram" style={{ width: 70, height: 70 }} />
           </a>
         </div>
 
