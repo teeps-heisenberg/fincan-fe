@@ -222,9 +222,9 @@ export const Homepage = (): JSX.Element => {
         </div>
 
         <div className="overlap-11">
-          <div className="text-wrapper-50">200+</div>
+          <div className="text-wrapper-50">100 +</div>
 
-          <div className="text-wrapper-51">Satisfied Customer</div>
+          <div className="text-wrapper-51">Satisfied Customers</div>
         </div>
 
         <div className="text-wrapper-52">Home</div>

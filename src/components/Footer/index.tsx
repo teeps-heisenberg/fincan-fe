@@ -9,6 +9,7 @@ import logo from "../../assets/footer.png";
 import facebookIcon from "../../assets/aboutUs/team/fb.png";
 import instagramIcon from "../../assets/aboutUs/team/instagram.png";
 import twitterIcon from "../../assets/aboutUs/team/twitter.png";
+import whatsappIcon from "../../assets/aboutUs/team/whatsapp.png";
 import "./style.scss";
 
 interface FooterProps {
@@ -118,6 +119,9 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
             <img loading="lazy" src={instagramIcon} alt="Instagram" style={{ width: 70, height: 70 }} />
+          </a>
+          <a href="https://wa.me" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img loading="lazy" src={whatsappIcon} alt="WhatsApp" style={{ width: 42, height: 42 }} />
           </a>
         </div>
 

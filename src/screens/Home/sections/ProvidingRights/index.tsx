@@ -38,7 +38,7 @@ function ProvidingRights() {
             <div className="right-side-grid">
               <div className="right-side-content-500">
                 <span className="number">
-                  <AnimatedCounter to={200} suffix="+" />
+                  <AnimatedCounter to={100} suffix="+" />
                 </span>
                 <span className="label">Satisfied Customers</span>
               </div>
@@ -50,9 +50,9 @@ function ProvidingRights() {
               </div>
               <div className="right-side-content-500">
                 <span className="number">
-                  <AnimatedCounter to={200} suffix="+" />
+                  <AnimatedCounter to={100} suffix="%" />
                 </span>
-                <span className="label">Partners Worldwide</span>
+                <span className="label">Client retention</span>
               </div>
               <div className="right-side-content-500">
                 <span className="number">
