@@ -1,57 +1,100 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
-import img1 from "../../../../assets/best-financial-1.jpg";
-import img2 from "../../../../assets/best-financial-2.jpg";
-import img3 from "../../../../assets/best-financial-3.jpg";
-import img4 from "../../../../assets/best-financial-4.jpg";
-import img5 from "../../../../assets/best-financial-5.jpg";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import { toast } from "react-toastify";
+import { Oval } from "react-loader-spinner";
 
-const pictures = [
-  {
-    id: 1,
-    src: img1,
-    title: "Financial Advisory",
-    description:
-      "Crafting personalized strategies to protect and grow your wealth.",
-  },
-  {
-    id: 2,
-    src: img2,
-    title: "Business Financing",
-    description: " Access funding solutions that fuel your business growth.",
-  },
-  {
-    id: 3,
-    src: img5,
-    title: "Retirement Planning",
-    description: "Secure your future with comprehensive retirement strategies.",
-  },
-  {
-    id: 4,
-    src: img3,
-    title: "Debt Management & Credit Advisory",
-    description:
-      "Get back on track with expert debt consolidation and credit repair services.",
-  },
-  {
-    id: 5,
-    src: img4,
-    title: "Startup Funding Advisory",
-    description:
-      "From pitch decks to securing investors, we help startups thrive.",
-  },
-];
+interface ServiceCard {
+  _id?: string;
+  title: string;
+  description: string;
+  masterImage?: string;
+}
 
 export default function BestFinancial() {
-  const [activeId, setActiveId] = useState<null | number>(1); // ❶ who’s open?
+  const [services, setServices] = useState<ServiceCard[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [activeId, setActiveId] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(`${baseUrl}/services/public`);
+        const data = await res.json();
+
+        if (!res.ok)
+          throw new Error(data.message || "Failed to fetch services");
+
+        const fetchedServices = data.services || [];
+        setServices(fetchedServices);
+        
+        // Set initial activeId to first service index (0-based)
+        if (fetchedServices.length > 0) {
+          setActiveId(0);
+        }
+      } catch (err: any) {
+        toast.error(err?.message || "An error occurred while loading services");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchServices();
+  }, [baseUrl]);
+
   const handlePrev = () => {
-    setActiveId((prev: any) => (prev === 1 ? pictures.length : prev - 1));
+    if (services.length === 0) return;
+    setActiveId((prev) => {
+      if (prev === null) return 0;
+      return prev === 0 ? services.length - 1 : prev - 1;
+    });
   };
 
   const handleNext = () => {
-    setActiveId((prev: any) => (prev === pictures.length ? 1 : prev + 1));
+    if (services.length === 0) return;
+    setActiveId((prev) => {
+      if (prev === null) return 0;
+      return prev === services.length - 1 ? 0 : prev + 1;
+    });
   };
+
+  const handleExploreMore = (serviceId?: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    if (serviceId) {
+      navigate(`/servicedetail/${serviceId}`);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="best-financial-main" style={{ minHeight: "400px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Oval
+          height={80}
+          width={80}
+          color="#007bff"
+          secondaryColor="#ccc"
+          strokeWidth={4}
+          strokeWidthSecondary={2}
+          visible
+        />
+      </div>
+    );
+  }
+
+  if (services.length === 0) {
+    return (
+      <div className="best-financial-main" style={{ padding: "50px", textAlign: "center" }}>
+        <h3 style={{ color: "#fff" }}>No Services Available</h3>
+      </div>
+    );
+  }
+
   return (
     <div className="best-financial-main">
       <div className="best-upper-part-div">
@@ -76,21 +119,27 @@ export default function BestFinancial() {
       </div>
 
       <div className="pic-div-best">
-        {pictures.map(({ id, src, title, description }) => {
-          const isOpen = id === activeId;
+        {services.map((service, index) => {
+          const isOpen = index === activeId;
+          const imageUrl = service.masterImage || "https://via.placeholder.com/400x422?text=No+Image";
           return (
             <button
-              key={id}
+              key={service._id || index}
               className={`pic-1 ${isOpen ? "active" : ""}`}
-              style={{ backgroundImage: `url(${src})` }}
-              onMouseEnter={() => setActiveId(id)}
+              style={{ backgroundImage: `url(${imageUrl})` }}
+              onMouseEnter={() => setActiveId(index)}
               // onMouseLeave={() => setActiveId(null)}
             >
               {/* <img loading="lazy" src={circle} alt="" className="circle-service-card" /> */}
               <div className="detail-box-best-fin">
-                <span>{title}</span>
-                <span>{description}</span>
-                <div className="btn-explore-more">Explore More</div>
+                <span>{service.title || "Untitled Service"}</span>
+                <span>{service.description || "No description available."}</span>
+                <div 
+                  className="btn-explore-more"
+                  onClick={(e) => handleExploreMore(service._id, e)}
+                >
+                  Explore More
+                </div>
               </div>
             </button>
           );
