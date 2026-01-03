@@ -286,14 +286,15 @@
 
   .blog-wrapper {
     display: flex;
+    justify-content: center;
     gap: 45px;
     width: 100%;
-    max-width: 1265px; // 850 + 45 + 415
+    max-width: 1265px;
     margin: 0 auto;
     padding: 40px 15px;
     box-sizing: border-box;
 
-    // Mobile layout - stack sidebar below main content
+    // Mobile layout
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 0;
@@ -302,12 +303,14 @@
     }
   }
 
-  // ---------- LEFT ---------------------------------------------------
+  // ---------- CENTERED CASE STUDIES ---------------------------------------------------
   .left-col {
     width: 850px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin: 0 auto;
 
     // Mobile responsiveness for main content
     @media (max-width: 768px) {
