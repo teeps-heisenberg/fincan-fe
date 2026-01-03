@@ -253,7 +253,7 @@ function About() {
           <div className="img-div">
             <img
               loading="lazy"
-              src={getCloudinaryUrl("fincan_wisom_updated_m8ktwz.png")}
+              src={getCloudinaryUrl("v1762205669/fincan/file_isc358.png")}
               alt="finWis"
               onError={(e) => ((e.target as HTMLImageElement).src = finWis)}
             />

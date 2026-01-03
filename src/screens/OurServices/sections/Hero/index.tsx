@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./style.scss";
 import heroImage from "../../../../assets/aboutUs/service-header-left2.png"; // replace with correct path
 import img1 from "../../../../assets/aboutUs/img1.png";
-import img2 from "../../../../assets/aboutUs/img2.jpg";
-import img3 from "../../../../assets/aboutUs/img3.jpg";
+import img2 from "../../../../assets/aboutUs/img2.jpeg";
+import img3 from "../../../../assets/aboutUs/img3.jpeg";
 import img4 from "../../../../assets/aboutUs/img1.png";
-import img5 from "../../../../assets/aboutUs/img2.jpg";
-import img6 from "../../../../assets/aboutUs/img3.jpg";
+import img5 from "../../../../assets/aboutUs/img2.jpeg";
+import img6 from "../../../../assets/aboutUs/img3.jpeg";
 import bgGroup from "../../../../assets/aboutUs/Group-bg.png";
 import { toast } from "react-toastify";
 import { Oval } from "react-loader-spinner";
@@ -79,8 +79,11 @@ function Hero() {
     const cardLeft = card.offsetLeft;
     const cardWidth = card.offsetWidth;
     const containerWidth = slider.offsetWidth;
-    const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
-    slider.scrollTo({ left: scrollPosition, behavior: smooth ? 'smooth' : 'auto' as ScrollBehavior });
+    const scrollPosition = cardLeft - containerWidth / 2 + cardWidth / 2;
+    slider.scrollTo({
+      left: scrollPosition,
+      behavior: smooth ? "smooth" : ("auto" as ScrollBehavior),
+    });
   };
 
   const scroll = (direction: "left" | "right") => {
@@ -143,7 +146,9 @@ function Hero() {
         mobileAutoScrollTimeout.current = window.setTimeout(() => {
           const targetIndex = Math.min(2, Math.max(0, images.length - 1));
           const slider = sliderRef.current;
-          const targetCard = slider?.children[targetIndex] as HTMLElement | undefined;
+          const targetCard = slider?.children[targetIndex] as
+            | HTMLElement
+            | undefined;
           if (!slider || !targetCard) return;
           const targetLeft =
             targetCard.offsetLeft -
@@ -205,7 +210,6 @@ function Hero() {
               Explore Our Expertise in Personal Financial Planning, Business
               Financing, Retirement, Debt Management, and More.
             </p>
-           
           </div>
         </div>
       </div>
@@ -219,8 +223,10 @@ function Hero() {
 
           <div className="slider" ref={sliderRef}>
             {images.map((img, idx) => (
-              <div 
-                className={`slider-item ${idx === activeCardIndex ? 'active' : ''}`} 
+              <div
+                className={`slider-item ${
+                  idx === activeCardIndex ? "active" : ""
+                }`}
                 key={idx}
                 onClick={() => handleCardClick(idx)}
               >

@@ -10,7 +10,7 @@ export const CompleteSolution = (): JSX.Element => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const img1 = getCloudinaryUrl("Homepage-New-4_v52uij.jpg");
   const img2 = getCloudinaryUrl("Homepage-New-2_ir53rr.jpg");
-  const img3 = getCloudinaryUrl("Homepage-New-5_d5d50o.jpg");
+  const img3 = getCloudinaryUrl("v1767401881/home-hero-new_muieyo.jpg");
   const navigate = useNavigate();
   const images = [img1, img2, img3];
 
@@ -31,9 +31,7 @@ export const CompleteSolution = (): JSX.Element => {
             <div className="ellipse-6" />
           </div>
           <p className="complete-solution">
-            <span className="text-wrapper-31">
-              Building Bankable{" "}
-            </span>
+            <span className="text-wrapper-31">Building Bankable </span>
             <span className="text-wrapper-32">Entrepreneurs</span>
           </p>
           <p className="text-hero">

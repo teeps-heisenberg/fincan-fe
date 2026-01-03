@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
 import img1 from "../../../../assets/aboutUs/img1.png";
-import img2 from "../../../../assets/aboutUs/img2.jpg";
-import img3 from "../../../../assets/aboutUs/img3.jpg";
+import img2 from "../../../../assets/aboutUs/img2.jpeg";
+import img3 from "../../../../assets/aboutUs/img3.jpeg";
 import AnimatedCounter from "../../../../components/AnimatedCounter";
 
 function ProvidingRights() {
@@ -29,7 +29,10 @@ function ProvidingRights() {
               construction financing, our goal is to make your vision bankable,
               sustainable, and lender-approved.
             </div>
-            <div className="explore-more-team" onClick={() => navigate(`/about`)}>
+            <div
+              className="explore-more-team"
+              onClick={() => navigate(`/about`)}
+            >
               Explore More
             </div>
           </div>

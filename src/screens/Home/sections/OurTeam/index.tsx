@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
-import img1 from "../../../../assets/team-1.jpg";
-import img2 from "../../../../assets/team-2.jpg";
-import img3 from "../../../../assets/team-3.jpg";
+//import img1 from "../../../../assets/team-1.jpg";
+// import img2 from "../../../../assets/team-2.jpg";
+// import img3 from "../../../../assets/team-3.jpg";
+import { getCloudinaryUrl } from "../../../../utils/getCloudinaryUrl";
 
 function OurTeam() {
   const [positions, setPositions] = useState(["img-1", "img-2", "img-3"]);
+  const img1 = getCloudinaryUrl("v1767125910/fincan/file_qtbbtd.png");
+  const img2 = getCloudinaryUrl("v1767125848/fincan/file_ixjss0.png");
+  const img3 = getCloudinaryUrl("v1767125493/fincan/file_xt78wn.png");
   const navigate = useNavigate();
   useEffect(() => {
     const interval = setInterval(() => {
