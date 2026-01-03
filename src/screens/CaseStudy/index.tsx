@@ -168,7 +168,7 @@ function CaseStudy() {
 
         <div className="case-study-div-content">
           <div className="blog-wrapper">
-            {/* ---------- LEFT COLUMN ---------- */}
+            {/* ---------- CENTERED CASE STUDIES ---------- */}
             <div className="left-col">
               {loading ? (
                 <div className="loader-overlay">
@@ -246,71 +246,6 @@ function CaseStudy() {
                 </div>
               )}
             </div>
-
-            {/* ---------- RIGHT SIDEBAR ---------- */}
-            <aside className="right-col">
-              {/* Search box */}
-              <div className="search-box">
-                <label className="search-label">Search Here</label>
-                <div className="search-input-wrapper">
-                  <input
-                    type="text"
-                    placeholder="Search by title…"
-                    value={search}
-                    onChange={handleSearchChange}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") handleSearchSubmit();
-                    }}
-                  />
-                  <span className="search-icon">&#128269;</span>{" "}
-                  {/* Unicode for magnifying glass */}
-                </div>
-              </div>
-
-              {/* small cards */}
-              <div className="section">
-                <div className="section-label">Popular Case Study</div>
-                <div className="sidebar-cards">
-                  {popularCaseStudies.map((c) => (
-                    <div
-                      className="sidebar-card"
-                      key={c._id}
-                      onClick={() => navigate(`/casestudydetail/${c._id}`)}
-                    >
-                      <img loading="lazy" src={c.masterImage} alt={c.title} />
-                      <div className="side-text">
-                        <span className="side-date">
-                          {" "}
-                          <span className="calendar-icon">📅</span>
-                          {new Date(c.createdAt).toLocaleDateString("en-GB", {
-                            day: "2-digit",
-                            month: "long",
-                            year: "numeric",
-                          })}
-                        </span>
-                        <span className="side-title">{c.title}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* tags */}
-              <div className="section">
-                <div className="section-label">Popular Tags</div>
-                <ul className="tag-list">
-                  {tags.map((t) => (
-                    <li
-                      key={t}
-                      className={t === selectedTag ? "selected-tag" : ""}
-                      onClick={() => handleTagClick(t)}
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
           </div>
         </div>
 
