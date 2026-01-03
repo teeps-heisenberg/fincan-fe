@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import './style.scss'
 import Header from '../../components/Header'
-import ConsultantSlider from './sections/ConsultantServiceSlider'
-import CardColumn from './sections/CardColumn'
 import Marquee from '../../components/Marquee'
 
 import m1 from '../../assets/marquee/img1.png'

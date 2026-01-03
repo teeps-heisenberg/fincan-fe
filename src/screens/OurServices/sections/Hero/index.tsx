@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
 import heroImage from "../../../../assets/aboutUs/service-header-left2.png"; // replace with correct path
@@ -11,11 +11,6 @@ import img6 from "../../../../assets/aboutUs/img3.jpeg";
 import bgGroup from "../../../../assets/aboutUs/Group-bg.png";
 import { toast } from "react-toastify";
 import { Oval } from "react-loader-spinner";
-interface CardData {
-  title: string;
-  description: string;
-  image: string;
-}
 
 interface ServiceCard {
   _id?: string;

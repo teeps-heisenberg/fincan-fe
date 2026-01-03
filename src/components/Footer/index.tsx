@@ -9,6 +9,7 @@ import logo from "../../assets/footer.png";
 import facebookIcon from "../../assets/aboutUs/team/fb.png";
 import instagramIcon from "../../assets/aboutUs/team/instagram.png";
 import twitterIcon from "../../assets/aboutUs/team/twitter.png";
+import whatsappIcon from "../../assets/aboutUs/team/whatsapp.png";
 import "./style.scss";
 
 interface FooterProps {
@@ -80,9 +81,7 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
             <div className="footer-logo">
               <img loading="lazy" src={logo} alt="FinCan Logo" className="logo" />
             </div>
-            <div className="footer-description">
-              Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley
-            </div>
+           
           </div>
 
           <div className="footer-section second">
@@ -108,13 +107,21 @@ function Footer({ blueSection = true, homeTightSpacing = false }: FooterProps) {
 
         <div className="social-icons">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img loading="lazy" src={facebookIcon} alt="Facebook" />
+            <img loading="lazy" src={facebookIcon} alt="Facebook" style={{ width: 36, height: 36 }} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img loading="lazy" src={twitterIcon} alt="Twitter" />
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img
+              loading="lazy"
+              src={twitterIcon}
+              alt="Twitter"
+              style={{ width: 32, height: 32 }}
+            />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img loading="lazy" src={instagramIcon} alt="Instagram" />
+            <img loading="lazy" src={instagramIcon} alt="Instagram" style={{ width: 70, height: 70 }} />
+          </a>
+          <a href="https://wa.me" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img loading="lazy" src={whatsappIcon} alt="WhatsApp" style={{ width: 42, height: 42 }} />
           </a>
         </div>
 
