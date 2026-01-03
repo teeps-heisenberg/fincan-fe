@@ -173,8 +173,8 @@ function ServiceDetail() {
                 {renderDetailedDescription(service.detailedDescription)}
               </div>
 
-              {/* ...other static sections remain unchanged... */}
-              <div className="explore-beyond">
+              {/* Commented out - everything after bullet points removed */}
+              {/* <div className="explore-beyond">
                 <img
                   loading="lazy"
                   src={getCloudinaryUrl("blog-3_c3numb.jpg")}
@@ -229,7 +229,7 @@ function ServiceDetail() {
               <div className="get-consultancy">
                 <div className="get-consultancy-title">Get Consultancy</div>
                 <div className="get-consultancy-subText">
-                  Whether you’re planning for retirement, seeking funding for
+                  Whether you're planning for retirement, seeking funding for
                   your startup, or managing complex business finances, our
                   consultancy team provides personalized guidance at every
                   stage. We believe in practical, actionable advice that not
@@ -252,7 +252,7 @@ function ServiceDetail() {
                 </div>
               </div>
               <div className="person-info-wrapper">
-                {/* <div className="meet-team-heading">Meet Our Team Member</div> */}
+                <div className="meet-team-heading">Meet Our Team Member</div>
                 {service.specialist ? (
                   <div className="person-info-div">
                     <img
@@ -300,7 +300,7 @@ function ServiceDetail() {
                     No specialist assigned to this service.
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </>

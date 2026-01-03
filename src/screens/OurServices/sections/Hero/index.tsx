@@ -215,39 +215,6 @@ function Hero() {
       </div>
       <div className="consultant-slider-container">
         <h2 className="slider-heading">Best Financial Consultant Services</h2>
-
-        <div className="slider-wrapper">
-          <button className="arrow left" onClick={() => scroll("left")}>
-            &#10094;
-          </button>
-
-          <div className="slider" ref={sliderRef}>
-            {images.map((img, idx) => (
-              <div
-                className={`slider-item ${
-                  idx === activeCardIndex ? "active" : ""
-                }`}
-                key={idx}
-                onClick={() => handleCardClick(idx)}
-              >
-                <img
-                  loading="lazy"
-                  className="slider-img"
-                  src={img.src}
-                  alt={`slide-${idx}`}
-                />
-                <div className="overlay-consultant">
-                  <p className="text-slider-detail">{img.detail}</p>
-                  <div className="line-slider" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <button className="arrow right" onClick={() => scroll("right")}>
-            &#10095;
-          </button>
-        </div>
       </div>
 
       {/* //card column component  */}
